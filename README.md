@@ -21,6 +21,7 @@ https://github.com/akicho8/shogi-player/tree/9fc2d386ce8ee7e335e6bbc17ca0c13d40b
 ## Build Setup
 
 ```bash
+$ yarn
 # serve with hot reload at localhost:3000
-nuxt dev -p 3000
+$ yarn run nuxt dev -p 3000
 ```
