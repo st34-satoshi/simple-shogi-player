@@ -99,10 +99,6 @@ export class Xcontainer {
     return count
   }
 
-  board_safe_delete_on(place) {
-    this.board.delete_at(place)
-  }
-
   board_piece_fore_class(xy) {
     const place = Place.fetch(xy)
     const soldier = this.board.lookup(place)

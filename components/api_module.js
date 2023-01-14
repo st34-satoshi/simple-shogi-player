@@ -16,6 +16,11 @@ export const api_module = {
       this.xcontainer.board.place_on(soldier)
     },
 
+    // 駒を削除する
+    api_delete_on(place) {
+      this.xcontainer.board.delete_at(place)
+    },
+
     // 盤面クリア
     api_board_clear() {
       this.xcontainer.board.clear()

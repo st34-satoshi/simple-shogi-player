@@ -22,6 +22,7 @@
             b-button(label="初期配置" @click="run_api_board_turn_set")
             b-button(label="7五角配置" @click="run_put_75_kaku")
             b-button(label="後手3四竜配置" @click="run_put_34_ryu")
+            b-button(label="4九金削除" @click="run_delete_on_49")
             b-button(label="反転" @click="run_api_flip_toggle")
       .columns
         .column
@@ -56,7 +57,7 @@ export default {
 
     run_api_board_clear()   { this.$refs.api_sp.api_board_clear()   },
     run_api_board_turn_set()   { this.$refs.api_sp.api_board_turn_set(0)   },
-    run_api_flip_toggle()   { this.$refs.api_sp.api_flip_toggle();console.log('flip')   },
+    run_api_flip_toggle()   { this.$refs.api_sp.api_flip_toggle()  },
     run_put_75_kaku(){
       const soldier = new Soldier({
         place: new Place([9-7, 5-1]),
@@ -74,6 +75,10 @@ export default {
         location: Location.fetch("white")
       })
       this.$refs.api_sp.api_place_on(soldier)
+    },
+    run_delete_on_49(){
+      const place = new Place([9-4, 9-1])
+      this.$refs.api_sp.api_delete_on(place)
     },
 
   },
