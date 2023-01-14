@@ -8,6 +8,7 @@ https://github.com/akicho8/shogi-player/tree/9fc2d386ce8ee7e335e6bbc17ca0c13d40b
 - 将棋盤・持ち駒の表示
 - 将棋盤と持ち駒のクリックイベント
 - 成る・不成の表示
+- (駒を動かす)
 
 ## 範囲外(fork元ではできるはず)
 - 将棋のルールの管理: 合法手判定・手番判定など
