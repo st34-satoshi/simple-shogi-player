@@ -22,6 +22,8 @@
             b-button(label="初期配置" @click="run_api_board_turn_set")
             b-button(label="7五角配置" @click="run_put_75_kaku")
             b-button(label="後手3四竜配置" @click="run_put_34_ryu")
+            b-button(label="先手持ち駒金追加" @click="run_api_hold_pieces_add_black_kin")
+            b-button(label="先手持ち駒金削除" @click="run_api_hold_pieces_remove_black_kin")
             b-button(label="4九金削除" @click="run_delete_on_49")
             b-button(label="反転" @click="run_api_flip_toggle")
       .columns
@@ -80,7 +82,16 @@ export default {
       const place = new Place([9-4, 9-1])
       this.$refs.api_sp.api_delete_on(place)
     },
-
+    run_api_hold_pieces_add_black_kin(){
+      const location = Location.fetch("black")
+      const piece = Piece.fetch("G")
+      this.$refs.api_sp.api_hold_pieces_add(location, piece)
+    },
+    run_api_hold_pieces_remove_black_kin(){
+      const location = Location.fetch("black")
+      const piece = Piece.fetch("G")
+      this.$refs.api_sp.api_hold_pieces_add(location, piece, -1)
+    },
   },
 }
 </script>

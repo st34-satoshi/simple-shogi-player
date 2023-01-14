@@ -21,6 +21,11 @@ export const api_module = {
       this.xcontainer.board.delete_at(place)
     },
 
+    // 持ち駒を増やす
+    api_hold_pieces_add(location, piece, plus = 1) {
+      this.xcontainer.hold_pieces_add(location, piece, plus)
+    },
+
     // 盤面クリア
     api_board_clear() {
       this.xcontainer.board.clear()
