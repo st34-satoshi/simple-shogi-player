@@ -5,6 +5,11 @@
     .title.is-3 デモ
     hr
 
+    .title.is-4.mt-6 0. 将棋盤表示
+    hr
+    .columns.is-centered
+      MainDocViewDemo0.is-10-tablet.is-8-desktop.is-6-widescreen
+
     .title.is-4.mt-6 1. 再生モード (view_mode)
     hr
     .columns.is-centered
