@@ -27,7 +27,6 @@
           li: nuxt-link(:to="{name: 'credit'}") クレジット
           template(v-if="development_p")
             li: nuxt-link(:to="{name: 'test-sp_device'}") sp_device テスト
-            li: nuxt-link(:to="{name: 'test-perf1'}") 高速化
             li: nuxt-link(:to="{name: 'test-test_bod_parse'}") BOD読み込み
             li: nuxt-link(:to="{name: 'test-test_foul'}") 反則判定
             li: nuxt-link(:to="{name: 'test-test_sound_timing'}") 音タイミング
