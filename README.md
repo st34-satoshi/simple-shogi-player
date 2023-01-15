@@ -1,6 +1,8 @@
 # simple-shogi-player
 
-https://github.com/akicho8/shogi-player/tree/9fc2d386ce8ee7e335e6bbc17ca0c13d40b90373 からfork
+https://github.com/akicho8/shogi-player/tree/9fc2d386ce8ee7e335e6bbc17ca0c13d40b90373 からfork。
+
+※ `git filter-repo --invert-paths --force --path path/to/large/file` でファイルを削除しているためfork元にマージするのは大変かもしれないです。
 
 <p><img src="https://raw.github.com/st34-satoshi/simple-shogi-player/master/application.png" height="480" /></p>
 
