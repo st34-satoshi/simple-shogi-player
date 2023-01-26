@@ -2,14 +2,11 @@
 .ShogiPlayer(:class="component_class")
   ShogiPlayerGround(ref="ShogiPlayerGround")
   DebugBlock
-  b-modal(:active.sync="setting_modal_p" has-modal-card v-if="xcontainer")
-    SettingModal
   pre(v-if="debug_p") {{$props}}
 </template>
 
 <script>
 import _ from "lodash"
-import Vue from "vue"
 
 // Library
 import { Xcontainer } from "./models/xcontainer.js"
@@ -20,7 +17,6 @@ import { Location   } from "./models/location.js"
 
 // components
 import PieceBox           from "./PieceBox.vue"
-import SettingModal       from "./SettingModal.vue"
 import ErrorNotify        from "./ErrorNotify.vue"
 import OpDisabledBlock    from "./OpDisabledBlock.vue"
 import ShogiPlayerGround  from "./ShogiPlayerGround.vue"
@@ -96,7 +92,6 @@ export default {
 
   components: {
     PieceBox,
-    SettingModal,
     ErrorNotify,
     OpDisabledBlock,
     EditToolBlock,
