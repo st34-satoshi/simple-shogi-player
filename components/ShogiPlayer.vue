@@ -1,7 +1,6 @@
 <template lang="pug">
 .ShogiPlayer(:class="component_class")
   ShogiPlayerGround(ref="ShogiPlayerGround")
-  DebugBlock
   pre(v-if="debug_p") {{$props}}
 </template>
 
@@ -21,7 +20,6 @@ import ErrorNotify        from "./ErrorNotify.vue"
 import OpDisabledBlock    from "./OpDisabledBlock.vue"
 import ShogiPlayerGround  from "./ShogiPlayerGround.vue"
 import EditToolBlock      from "./EditToolBlock.vue"
-import DebugBlock         from "./DebugBlock.vue"
 import PromoteSelectModal from "./PromoteSelectModal.vue"
 
 // mixins modules
@@ -95,7 +93,6 @@ export default {
     ErrorNotify,
     OpDisabledBlock,
     EditToolBlock,
-    DebugBlock,
     ShogiPlayerGround,
     PromoteSelectModal,
   },

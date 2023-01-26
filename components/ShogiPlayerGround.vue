@@ -7,7 +7,6 @@
 
 <script>
 import ShogiPlayerWidth from "./ShogiPlayerWidth.vue"
-import DebugBlock from "./DebugBlock.vue"
 
 import { support } from "./support.js"
 
