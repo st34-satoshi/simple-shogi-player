@@ -2,8 +2,7 @@
 .ShogiPlayerWidth
   PromoteSelectModal( v-if="TheSp.dialog_soldier")
   OpDisabledBlock()
-  EditToolBlock()
-  TurnShowOrEdit()
+  EditToolBlock() // TODO: remove
   .ShogiPlayerTransformBlock
     ShogiPlayerBody( ref="ShogiPlayerBody")
   PieceBox()
@@ -13,7 +12,6 @@
 
 <script>
 import EditToolBlock from "./EditToolBlock.vue"
-import TurnShowOrEdit from "./TurnShowOrEdit.vue"
 import ShogiPlayerBody from "./ShogiPlayerBody.vue"
 import PieceBox from "./PieceBox.vue"
 import NavigateBlock from "./NavigateBlock.vue"
@@ -28,7 +26,6 @@ export default {
   mixins: [support],
   components: {
     EditToolBlock,
-    TurnShowOrEdit,
     ShogiPlayerBody,
     PieceBox,
     NavigateBlock,
@@ -47,7 +44,7 @@ export default {
 
   .ShogiPlayerWidth
     // これがないと OpDisabledBlock の 100% は画面幅になってしまう
-    // また NavigateBlock や TurnShowOrEdit の border が画面全体に及んでしまう
+    // また NavigateBlock の border が画面全体に及んでしまう
     position: relative
 
   .ShogiPlayerWidth
