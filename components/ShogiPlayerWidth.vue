@@ -6,7 +6,6 @@
   .ShogiPlayerTransformBlock
     ShogiPlayerBody( ref="ShogiPlayerBody")
   PieceBox()
-  NavigateBlock()
   CommentBlock()
 </template>
 
@@ -14,7 +13,6 @@
 import EditToolBlock from "./EditToolBlock.vue"
 import ShogiPlayerBody from "./ShogiPlayerBody.vue"
 import PieceBox from "./PieceBox.vue"
-import NavigateBlock from "./NavigateBlock.vue"
 import CommentBlock from "./CommentBlock.vue"
 import OpDisabledBlock from "./OpDisabledBlock.vue"
 import PromoteSelectModal from "./PromoteSelectModal.vue"
@@ -28,7 +26,6 @@ export default {
     EditToolBlock,
     ShogiPlayerBody,
     PieceBox,
-    NavigateBlock,
     CommentBlock,
     OpDisabledBlock,
     PromoteSelectModal,
@@ -44,7 +41,6 @@ export default {
 
   .ShogiPlayerWidth
     // これがないと OpDisabledBlock の 100% は画面幅になってしまう
-    // また NavigateBlock の border が画面全体に及んでしまう
     position: relative
 
   .ShogiPlayerWidth

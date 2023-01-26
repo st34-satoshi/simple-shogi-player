@@ -129,9 +129,6 @@ export const play_mode_module = {
         if (this.play_mode_advanced_short_sfen_emit) {
           this.$emit("update:play_mode_advanced_short_sfen", this.xcontainer.to_short_sfen) // 14 ms
         }
-
-        // 操作モードで詰将棋を動かしていて間違えて1手すぐに戻したいとき「←」キーですぐに戻せるように(スライダーがあれば)フォーカスする
-        this.turn_slider_focus()
       }
     },
 

@@ -70,10 +70,5 @@ export const api_module = {
       this.xcontainer.current_turn = options.turn || 0
       this.xcontainer.run()
     },
-
-    // slider にフォーカスする
-    api_turn_slider_focus() {
-      this.turn_slider_focus()
-    },
   },
 }

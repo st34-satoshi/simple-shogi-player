@@ -5,9 +5,7 @@ import isMobile from 'ismobilejs'
 const FOCUS_FUNCTION = false
 
 export const app_focus = {
-  props: {
-    sp_turn_slider_focus: { type: String,  default: "is_turn_slider_focus_on", }, // mountedしたらスライダーにフォーカスする？
-  },
+  props: {},
   beforeMount() {
     if (this.debug_p) {
       console.log(`sp_mobile_p: ${this.sp_mobile_p}`)
@@ -15,46 +13,13 @@ export const app_focus = {
       console.log(`focus_disable_p: ${this.focus_disable_p}`)
     }
   },
-  mounted() {
-    if (this.sp_turn_slider_focus === "is_turn_slider_focus_on") {
-      this.turn_slider_focus()
-    }
-  },
+  mounted() {},
   methods: {
     // テキストフィールドまたはテキストエリアにフォーカスしているか？
     focus_on_input_tag_p() {
       const dom = document.activeElement
       if (dom.tagName === "TEXTAREA" || dom.tagName === "INPUT") {
         return true
-      }
-    },
-
-    // コントローラーの指定のパーツにフォーカスする
-    nav_focus_to(key) {
-      if (this.focus_disable_p) { return false }
-      const el = this.__navigate_block_element_refs(key)
-      if (el) {
-        el.focus()
-        return true
-      }
-      return false
-    },
-
-    // コントローラーのスライダーにフォーカスする
-    turn_slider_focus() {
-      if (this.focus_disable_p) { return false }
-      const el = this.__navigate_block_element_refs("TurnSliderBlock")
-      if (el) {
-        return el.focus_to_self()
-      }
-      return false
-    },
-
-    // private
-
-    __navigate_block_element_refs(key) {
-      if (this.$NavigateBlock) {
-        return this.$NavigateBlock.$refs[key]
       }
     },
   },

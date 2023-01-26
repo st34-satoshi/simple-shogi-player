@@ -11,4 +11,3 @@
 | `api_flip_toggle()`                    | 反転する(コントローラーの「上下ボタン」を押したのと同じ)            |
 | `api_retract_a_move()`                 | 待った(2手戻す)                                                     |
 | `api_sfen_or_kif_set()`                | 棋譜の設定                                                          |
-| `api_turn_slider_focus()`              | 手数のスライダーがあればフォーカスする                              |

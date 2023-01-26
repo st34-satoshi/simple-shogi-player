@@ -69,18 +69,6 @@ export const navi_module = {
       if (this.sp_key_event_capture_enabled && (this.view_p || this.play_p)) {
         const dom = document.activeElement
 
-        if (this.$NavigateBlock) {
-          const controllers = [
-            this.$NavigateBlock.$refs.first,
-            this.$NavigateBlock.$refs.previous,
-            this.$NavigateBlock.$refs.next,
-            this.$NavigateBlock.$refs.last,
-          ]
-          if (!(dom === undefined || dom.tagName === "BODY" || _.includes(controllers, dom))) {
-            return
-          }
-        }
-
         if (e.code === "Backspace" || e.code === "ArrowUp" || e.code === "ArrowLeft" || e.key === "k" || e.key === "p" || e.key === "b") {
           this.relative_move(-1, e)
           e.preventDefault()
@@ -112,26 +100,14 @@ export const navi_module = {
       }
 
       this.current_turn_add(v, event)
-
-      // TurnSliderBlock → (next || previous) の順でフォーカスを試みる
-      if (!this.turn_slider_focus()) {
-        // スライダーにはフォーカスできなかったのでボタンの方にフォーカスする
-        if (v > 0) {
-          this.nav_focus_to("next")
-        } else {
-          this.nav_focus_to("previous")
-        }
-      }
     },
 
     move_to_first(event = null) {
       this.current_turn_set(this.turn_offset_min, event)
-      this.turn_slider_focus() || this.nav_focus_to("first")
     },
 
     move_to_last(event = null) {
       this.current_turn_set(this.turn_offset_max, event)
-      this.turn_slider_focus() || this.nav_focus_to("last")
     },
 
     current_turn_add(v, event = null) {
@@ -173,7 +149,6 @@ export const navi_module = {
     viewpoint_flip_handle() {
       this.viewpoint_flip()
       this.$emit("user_viewpoint_flip")
-      this.turn_slider_focus()
     },
 
     viewpoint_flip() {
@@ -182,22 +157,5 @@ export const navi_module = {
   },
   computed: {
     fliped() { return this.new_viewpoint === "white"  },
-
-    //////////////////////////////////////////////////////////////////////////////// for NavigateBlock.vue, TurnSliderBlock.vue
-
-    inside_controller_p() {
-      if (this.sp_setting === "is_setting_on") {
-        return true
-      }
-      return this.sp_controller === "is_controller_on" && (this.view_p || this.play_p)
-    },
-
-    inside_slider_p() {
-      return this.sp_slider === "is_slider_on" && (this.view_p || this.play_p)
-    },
-
-    inside_navigate_p() {
-      return this.inside_controller_p || this.inside_slider_p
-    },
   },
 }
