@@ -72,7 +72,6 @@ export default {
     sp_mobile_vertical:                    { type: String, default: "is_mobile_vertical_on", }, // モバイル時に自動的に縦配置に切り替える
     sp_location_behavior:                  { type: String, default: "is_location_flip_on",   }, // ☗☖をタップしたとき視点を切り替える
     sp_debug_mode:                         { type: String, default: "is_debug_mode_off",     }, // デバッグモード
-    sp_sfen_show:                          { type: String, default: "is_sfen_show_off",      }, // SFENを下に表示する
     sp_overlay_nav:                        { type: String, default: "is_overlay_nav_off",    }, // view_mode のとき盤の左右で手数変更(falseなら駒を動かせる)
     sp_turn:                               { type: Number, default: -1,                      }, // 局面(手数)
     sp_run_mode:                           { type: String, default: "view_mode",             }, // モード

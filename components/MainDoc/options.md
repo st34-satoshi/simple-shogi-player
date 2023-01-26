@@ -52,12 +52,6 @@
 | `operation_invalid2`                        | 自分が手番だが相手の駒を動かそうとした                   |                                                                |   |
 | `foul_accident`                             | 反則が発生したとき                                       | sp_play_mode_foul_check_p && sp_play_mode_foul_break_p のときのみ                                                                             |   |
 
-## Slot
-
-| 名前        | 引数               | 場所                                      |
-|-------------|--------------------|-------------------------------------------|
-| `sfen_part` | `sfen`, `xcontainer` | sp_sfen_show のときに表示する sfen の部分 |
-
 ## 内部変数 (読み取り専用)
 
 | 名前      | 意味                                                                             |

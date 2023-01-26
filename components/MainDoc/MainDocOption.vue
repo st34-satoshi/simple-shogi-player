@@ -39,10 +39,6 @@
             b-radio-button(size="is-small" v-model="sp_slider" native-value="is_slider_off") OFF
             b-radio-button(size="is-small" v-model="sp_slider" native-value="is_slider_on") ON
 
-          b-field(custom-class="is-small" label="SFEN表示")
-            b-radio-button(size="is-small" v-model="sp_sfen_show" native-value="is_sfen_show_off") OFF
-            b-radio-button(size="is-small" v-model="sp_sfen_show" native-value="is_sfen_show_on") ON
-
           b-field(custom-class="is-small" label="設定ボタン表示")
             b-radio-button(size="is-small" v-model="sp_setting" native-value="is_setting_off") OFF
             b-radio-button(size="is-small" v-model="sp_setting" native-value="is_setting_on") ON
@@ -157,7 +153,6 @@
             :sp_player_info="sp_player_info"
             :sp_key_event_capture_enabled="sp_key_event_capture_enabled"
             :sp_controller="sp_controller"
-            :sp_sfen_show="sp_sfen_show"
             :sp_overlay_nav="sp_overlay_nav"
             :sp_human_side="sp_human_side"
 
@@ -191,7 +186,6 @@
                 |   sp_slider="{{sp_slider}}"
                 |   sp_debug_mode="{{sp_debug_mode}}"
                 |   sp_summary="{{sp_summary}}"
-                |   sp_sfen_show="{{sp_sfen_show}}"
                 |   sp_overlay_nav="{{sp_overlay_nav}}"
                 |   sp_setting="{{sp_setting}}"
                 |   :sp_op_disabled="{{sp_op_disabled}}"
@@ -240,7 +234,6 @@ export default {
       sp_slider: "is_slider_off",
       sp_overlay_nav: "is_overlay_nav_off",
       sp_controller: "is_controller_off",
-      sp_sfen_show: "is_sfen_show_off",
       sp_human_side: 'both',
       sp_key_event_capture_enabled: false,
       sp_debug_mode: "is_debug_mode_off",

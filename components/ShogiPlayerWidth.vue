@@ -8,7 +8,6 @@
     ShogiPlayerBody( ref="ShogiPlayerBody")
   PieceBox()
   NavigateBlock()
-  SfenShowBlock()
   CommentBlock()
 </template>
 
@@ -18,7 +17,6 @@ import TurnShowOrEdit from "./TurnShowOrEdit.vue"
 import ShogiPlayerBody from "./ShogiPlayerBody.vue"
 import PieceBox from "./PieceBox.vue"
 import NavigateBlock from "./NavigateBlock.vue"
-import SfenShowBlock from "./SfenShowBlock.vue"
 import CommentBlock from "./CommentBlock.vue"
 import OpDisabledBlock from "./OpDisabledBlock.vue"
 import PromoteSelectModal from "./PromoteSelectModal.vue"
@@ -34,7 +32,6 @@ export default {
     ShogiPlayerBody,
     PieceBox,
     NavigateBlock,
-    SfenShowBlock,
     CommentBlock,
     OpDisabledBlock,
     PromoteSelectModal,
