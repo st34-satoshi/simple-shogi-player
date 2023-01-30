@@ -54,8 +54,6 @@
       MainDocEditDemo2
     .columns.mt-6
       MainDocEditDesc1
-
-    MainDocStyleDemo
 </template>
 
 <script>
