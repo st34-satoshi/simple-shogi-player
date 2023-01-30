@@ -85,13 +85,4 @@ export default {
           bottom: unset
           right:  unset
           left:   unset
-
-  //////////////////////////////////////////////////////////////////////////////// 駒箱
-  .PieceBox
-    .PieceTexture
-      display: flex
-      justify-content: center
-      align-items: center
-    .PieceCount
-      top: var(--sp_piece_count_gap_bottom)
 </style>

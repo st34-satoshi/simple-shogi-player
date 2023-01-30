@@ -83,7 +83,7 @@ export const hover_piece_module = {
         const vec = this.vector_add(ci.center, gap)                                              // 中央から左上にずらす
         this.element_vector_set(this.$data._HoverPieceElement, vec)                                   // カーソル座標とする
       } else {
-        // 駒箱や駒台から取り出した駒
+        // 駒台から取り出した駒
         // マウスイベントが発生するまでは画面内に表示されてしまうので画面外に出す
         this.$data._HoverPieceElement.style.left = "-50%"
         this.$data._HoverPieceElement.style.top  = "-50%"

@@ -56,10 +56,6 @@ export default {
   +defvar(sp_stand_piece_h, 50px)              // 駒台のセル(H)
   +defvar(sp_stand_piece_rate, 80%)            // 駒台のセル内の駒占有率
 
-  +defvar(sp_piece_box_piece_w,    47px)       // 駒箱のセル(W)
-  +defvar(sp_piece_box_piece_h,    50px)       // 駒箱のセル(H)
-  +defvar(sp_piece_box_piece_rate, 80%)        // 駒箱のセル内の駒占有率
-
   // 共通
   .PieceTap
     &.selectable_p
@@ -191,15 +187,6 @@ export default {
     .PieceTexture
       width:  var(--sp_stand_piece_rate)
       height: var(--sp_stand_piece_rate)
-
-  // 駒箱
-  .PieceBox
-    .PieceTap
-      width:  var(--sp_piece_box_piece_w)
-      height: var(--sp_piece_box_piece_h)
-    .PieceTexture
-      width:  var(--sp_piece_box_piece_rate)
-      height: var(--sp_piece_box_piece_rate)
 
   // 持ち上げ駒
   // カーソルは駒台の駒と同じ大きさにしておくが盤上の駒を持ち上げたときに小さくなるので PieceTexture は 100% 固定にする

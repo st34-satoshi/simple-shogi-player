@@ -148,21 +148,6 @@ export default {
         .MembershipStandTexture
           border: var(--sp_stand_hover_border_stroke) dashed var(--sp_stand_hover_border_color)
 
-  // 駒がなくても駒が置けるようにする ← piece_lifted_hover_reaction になったときだけにすると駒台が拡縮して使いにくい
-  //
-  // +IS_HORIZONTAL
-  //   .MembershipStand2
-  //     &.piece_lifted_hover_reaction
-  //       min-height: calc(var(--sp_stand_piece_h) * var(--sp_stand_horizontal_hoverable_min_height)) // 最低限縦に駒3つ分を確保
-  //       justify-content: flex-start                   // そうすると既存の駒が中央によってしまうので上寄せ
-  //       min-width:  var(--sp_stand_piece_w)           // 横を最低限確保
-  // &.is_vertical
-  //   .MembershipStand2
-  //     &.piece_lifted_hover_reaction
-  //       width: 100%                         // 駒がなくても駒台に置けるようにするため横幅最大化
-  //       justify-content: flex-start         // そうすると既存の駒が中央によってしまうので左寄せ
-  //       min-height: var(--sp_stand_piece_h) // 縦を最低限確保
-
   ////////////////////////////////////////////////////////////////////////////////
   &.is_layer_on
     .MembershipStand

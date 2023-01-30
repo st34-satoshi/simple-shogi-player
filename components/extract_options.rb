@@ -38,14 +38,10 @@ Pathname("MainDoc/css_variable.md").write(s)
 # >> | `--sp_stand_piece_w`                         | 47px                      | 駒台のセル(W)                                                         |
 # >> | `--sp_stand_piece_h`                         | 50px                      | 駒台のセル(H)                                                         |
 # >> | `--sp_stand_piece_rate`                      | 80%                       | 駒台のセル内の駒占有率                                                |
-# >> | `--sp_piece_box_piece_w`                     | 47px                      | 駒箱のセル(W)                                                         |
-# >> | `--sp_piece_box_piece_h`                     | 50px                      | 駒箱のセル(H)                                                         |
-# >> | `--sp_piece_box_piece_rate`                  | 80%                       | 駒箱のセル内の駒占有率                                                |
 # >> | `--sp_body_width`                            | 100%                      | 盤(駒台を含む)の幅         FIXME: とる                                |
 # >> | `--sp_body_max_width`                        | none                      | 盤(駒台を含む)の最大幅     FIXME: とる                                |
 # >> | `--sp_ground_color`                          | transparent               | グラウンド背景色                                                      |
 # >> | `--sp_ground_image`                          | none                      | グラウンド背景画像                                                    |
-# >> | `--sp_piece_box_color`                       | rgba(0, 0, 0, 0.2)        | 駒箱背景                                                              |
 # >> | `--sp_common_gap`                            | 12px                      | 共通の隙間                                                            |
 # >> | `--sp_turn_slider_block_margin_top`          | 0.75rem                   | 手数スライダーの上マージン                                            |
 # >> | `--sp_board_color`                           | rgba(0, 0, 0, 0.2)        | 盤の色                                                                |
@@ -71,8 +67,6 @@ Pathname("MainDoc/css_variable.md").write(s)
 # >> | `--sp_piece_count_bg_color`                  | rgba(255, 255, 255, 0.75) | 駒数の文字色背景                                                      |
 # >> | `--sp_piece_count_padding`                   | 3px                       | 駒数のパディング                                                      |
 # >> | `--sp_board_aspect_ratio`                    |                     1.097 | 盤の横を1.0としたときの縦の比率                                       |
-# >> | `--sp_stand_hover_border_color`              | rgba(0, 0, 0, 0.2)        | 駒を持って駒箱の上にいるときのボーダー色                              |
-# >> | `--sp_stand_hover_border_stroke`             | 2px                       | 駒を持って駒箱の上にいるときのボーダーの太さ                          |
 # >> | `--sp_stand_horizontal_hoverable_min_height` |                         3 | edit_mode + 縦配置 + 駒台に置ける のときの駒台の最低限の高さ(駒N個分) |
 # >> | `--sp_stand_bg_color`                        | hsla(0, 0%, 0%, 0)        | 駒台の背景色                                                          |
 # >> | `--sp_invisible_dimension`                   |                         9 | 天王山の付近を求めるための盤の縦辺のセル数                            |

@@ -27,12 +27,6 @@ export const preset_module = {
       }
       this.xcontainer.run()
 
-      // 足りない駒を preset_info から設定するのは廃止
-      // this.xcontainer.piece_box_reset_by_preset(preset_info)
-
-      // 自動的に駒箱を補充
-      this.xcontainer.piece_box_piece_counts_adjust()
-
       // 駒落ちのときは△の手番から始まるので edit_mode での手番に反映する
       // xcontainer の current_turn が 0 のまま run しているので xcontainer.current_location.key で最初の手番がわかる
       this.init_location_key = this.xcontainer.current_location.key

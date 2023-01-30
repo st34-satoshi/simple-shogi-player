@@ -6,7 +6,7 @@ export class MoveCancelInfo extends MemoryRecord {
       // 一般的なのはこれ
       // ウォーズやぴよ将棋はこれ
       // 動けないところをタップすると離す
-      // ちなみに駒台や駒箱はセルの概念が微妙なため、持ってさらに持つといったん離すで固定している
+      // ちなみに駒台はセルの概念が微妙なため、持ってさらに持つといったん離すで固定している
       { key: "is_move_cancel_standard",   name: "無効な場所をタップで駒を離す", smooth_cancel: true, },
 
       // ShogiPlayer はもともとこれにしていた

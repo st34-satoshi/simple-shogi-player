@@ -26,11 +26,10 @@ export const edit_mode_module = {
       // |------------------------+------------+------------+---------------------|
       // | 盤上                   | ○         |            |                     |
       // | 駒台                   |            | ○         | ○                  |
-      // | 駒箱                   |            | ○         |                     |
       // |------------------------+------------+------------+---------------------|
       place_from: null,           // 盤上ら動かそうとしているときの元位置
-      have_piece: null,           // 駒台 or 駒箱から持った駒
-      have_piece_location: null,  // 駒台から持ったときだけ先後が入っている。駒箱から取り出しているときは null
+      have_piece: null,           // 駒台から持った駒
+      have_piece_location: null,  // 駒台から持ったときだけ先後が入っている。
       have_piece_promoted: null,    // 持ったとき成った状態にするか？
 
       dialog_soldier: null,     // 成り確認ダイアログ表示中か？
@@ -122,7 +121,7 @@ export const edit_mode_module = {
       }
 
       if (this.play_p && this.have_piece && this.killed_soldier) {
-        this.log("駒台や駒箱から持ち上げた駒を盤上の駒の上に置こうとしたので無効とする")
+        this.log("駒台から持ち上げた駒を盤上の駒の上に置こうとしたので無効とする")
         this.if_standard_then_unhold() // ←元の位置に戻す場合
         return
       }
@@ -133,7 +132,7 @@ export const edit_mode_module = {
           const force_promote_length = new_soldier.piece.piece_vector.force_promote_length // 死に駒になる上の隙間
           if (force_promote_length != null) {                                              // チェックしない場合は null
             if (new_soldier.top_spaces <= force_promote_length) {                          // 実際の上の隙間 <= 死に駒になる上の隙間
-              this.log("駒台や駒箱から持ち上げた駒を置こうとしたけど死に駒なので無効とする")
+              this.log("駒台から持ち上げた駒を置こうとしたけど死に駒なので無効とする")
               if (this.foul_add("foul_dead_soldier", {soldier: new_soldier}) === "__cancel__") { // 死に駒
                 return
               }
@@ -332,13 +331,8 @@ export const edit_mode_module = {
             // have_piece_location の駒台から移動した駒で取ったので have_piece_location の方に置く
             this.xcontainer.hold_pieces_add(this.have_piece_location, this.killed_soldier.piece)
           } else {
-            // 駒箱から移動した駒で取ったので this.killed_soldier.location に返すとする場合
-            if (false) {
-              this.xcontainer.hold_pieces_add(this.killed_soldier.location, this.killed_soldier.piece)
-            } else {
-              // 駒の向きは先手と同じなのでわかりやすいように 先手に返す
-              this.xcontainer.hold_pieces_add(Location.fetch("black"), this.killed_soldier.piece)
-            }
+            // 駒の向きは先手と同じなのでわかりやすいように 先手に返す
+            this.xcontainer.hold_pieces_add(Location.fetch("black"), this.killed_soldier.piece)
           }
         }
 
@@ -464,7 +458,7 @@ export const edit_mode_module = {
         }
       }
 
-      // 相手の駒台から自分の駒台、または駒箱から自分の駒台へ移動
+      // 相手の駒台から自分の駒台から自分の駒台へ移動
       if (this.edit_p) {
         // if (this.have_piece_location !== location && this.have_piece) {
         if (this.have_piece) {
@@ -548,54 +542,6 @@ export const edit_mode_module = {
       this.hover_piece_element_create(e, this.origin_soldier2)
     },
 
-    // 駒箱の駒を持ち上げている？
-    piece_box_have_p(piece) {
-      return _.isNil(this.have_piece_location) && this.have_piece === piece
-    },
-
-    // FIXME: 駒を持っているときは「駒箱の駒」に対して一切反応しないようにしたい。そうすると駒箱だけの判定で済む
-    piece_box_other_click(e) {
-      this.log("piece_box_other_click:駒箱クリック")
-
-      if (_.isNil(this.have_piece_location) && this.have_piece) {
-        this.log("持っているならキャンセル")
-        this.state_reset()
-        return true
-      }
-
-      if (this.have_piece_location && this.have_piece) {
-        this.log("駒台から駒箱に移動")
-        const count = this.hold_piece_source_cut(e)               // 相手の持駒を減らして減らした分だけ
-        this.xcontainer.piece_box_add(this.have_piece, count) // 駒箱に加算する
-        this.state_reset()
-        return true
-      }
-
-      if (this.origin_soldier1) {
-        this.log("盤上の駒を駒箱に移動")
-        this.xcontainer.piece_box_add(this.origin_soldier1.piece)
-        this.xcontainer.board.delete_at(this.origin_soldier1.place)
-        this.state_reset()
-        return true
-      }
-
-      return false
-    },
-
-    // 駒箱の駒をクリック
-    piece_box_piece_click(piece, e) {
-      // 駒をクリックしたとき駒箱をクリックするのと同じ処理を実行
-      if (this.piece_box_other_click(e)) {
-        return
-      }
-
-      this.log("piece_box_piece_click:駒箱の駒を持つ")
-      this.have_piece = piece
-      this.have_piece_location = null
-      this.have_piece_promoted = false
-      this.hover_piece_element_create(e, this.origin_soldier2)
-    },
-
     // 成り不成り選択ダイアログ表示中はキャンセルできない
     hold_cancel(e) {
       if (!this.dialog_soldier) {
@@ -637,12 +583,6 @@ export const edit_mode_module = {
         this.xcontainer.hold_pieces_add(this.have_piece_location, this.have_piece, -count)
       } else {
         this.log("駒箱から移動")
-        if (this.meta_p(e)) {
-          this.log("シフトが押されていたので全部移動")
-          count = this.xcontainer.piece_box_count(this.have_piece)
-        }
-        count = this.xcontainer.piece_box_can_be_reduced_count(this.have_piece, count) // 減らせる数を clamp する。そうしないと駒箱から移動するときに駒が増えいく
-        this.xcontainer.piece_box_add(this.have_piece, -count)
       }
 
       // 実際に減らせれた数を返す(重要)
@@ -653,8 +593,6 @@ export const edit_mode_module = {
     piece_decriment() {
       if (this.have_piece_location) {
         this.xcontainer.hold_pieces_add(this.have_piece_location, this.have_piece, -1)
-      } else {
-        this.xcontainer.piece_box_add(this.have_piece, -1)
       }
     },
 
@@ -712,10 +650,6 @@ export const edit_mode_module = {
       // this.emit_update_edit_mode_short_sfen()
     },
 
-    // -------------------------------------------------------------------------------- PieceBox
-
-    // --------------------------------------------------------------------------------
-
     fn_flip_all() {
       // 盤面反転
       this.xcontainer.board = this.xcontainer.board.flip_all
@@ -736,7 +670,7 @@ export const edit_mode_module = {
       this.init_location_key = this.init_location.flip.key
     },
 
-    // 駒箱や駒台から持ち上げている駒
+    // 駒台から持ち上げている駒
     soldier_create_from_stand_or_box_on(place) {
       return new Soldier({
         piece: this.have_piece,
@@ -762,7 +696,7 @@ export const edit_mode_module = {
       }
     },
 
-    // 移動元の駒(駒台 or 駒箱から)
+    // 移動元の駒(駒台)
     // place に中途半端なインスタンスを設定してはいけない
     // null を設定することで盤上からではないことがわかる
     origin_soldier2() {

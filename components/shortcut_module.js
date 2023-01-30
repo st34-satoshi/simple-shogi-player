@@ -29,17 +29,6 @@ export const shortcut_module = {
         }
       }
 
-      // 駒箱クリック
-      if (this.edit_p) {
-        if (e.code === "Backspace" || e.code === "Delete" || (!this.meta_p(e) && e.key === "t")) {
-          this.soldier_hold_unless_lifted_p(e)
-          if (this.piece_box_other_click(e)) {
-            e.preventDefault()
-            return true
-          }
-        }
-      }
-
       // 移動キャンセル
       if (e.code === "Escape") {
         if (this.hold_cancel(e)) {
@@ -144,10 +133,6 @@ export const shortcut_module = {
       this.mouseover_info = { type: "MembershipStand", location: location, piece: piece }
     },
 
-    piece_box_mouseover_handle(piece, e) {
-      this.mouseover_info = { type: "PieceBox", piece: piece }
-    },
-
     mouseleave_handle() {
       this.mouseover_info = null
     },
@@ -161,9 +146,6 @@ export const shortcut_module = {
           }
           if (this.mouseover_info.type === "MembershipStand") {
             this.piece_stand_piece_click(this.mouseover_info.location, this.mouseover_info.piece, false, e)
-          }
-          if (this.mouseover_info.type === "PieceBox") {
-            this.piece_box_piece_click(this.mouseover_info.piece, e)
           }
         }
       }

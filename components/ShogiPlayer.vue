@@ -15,7 +15,6 @@ import { KifParser  } from "./models/kif_parser.js"
 import { Location   } from "./models/location.js"
 
 // components
-import PieceBox           from "./PieceBox.vue"
 import ErrorNotify        from "./ErrorNotify.vue"
 import OpDisabledBlock    from "./OpDisabledBlock.vue"
 import ShogiPlayerGround  from "./ShogiPlayerGround.vue"
@@ -88,7 +87,6 @@ export default {
   },
 
   components: {
-    PieceBox,
     ErrorNotify,
     OpDisabledBlock,
     EditToolBlock,
@@ -196,8 +194,6 @@ export default {
 
         this.xcontainer = new_xcontainer
         this.init_location_key = new_xcontainer.current_location.key
-
-        this.xcontainer.piece_box_piece_counts_adjust()
       }
     },
 
@@ -240,9 +236,6 @@ export default {
       // そのあとで指定の手数に変更
       this.xcontainer.current_turn = this.sp_turn
       this.xcontainer.run()
-
-      // 不足駒を駒箱に生成
-      this.xcontainer.piece_box_piece_counts_adjust()
 
       this.flip_if_white_run()
     },

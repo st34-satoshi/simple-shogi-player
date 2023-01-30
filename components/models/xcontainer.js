@@ -217,82 +217,7 @@ export class Xcontainer {
     return new SfenSerializer(this)
   }
 
-  // -------------------------------------------------------------------------------- piece_box
-
-  piece_box_count(piece) {
-    return this.piece_box[piece.key] || 0
-  }
-
-  piece_box_add(piece, plus = 1) {
-    const count = this.piece_box_count(piece) + plus
-    Vue.delete(this.piece_box, piece.key)
-    if (count >= 1) {
-      Vue.set(this.piece_box, piece.key, count)
-    }
-  }
-
-  // piece を count 減らしたいとき本当に減らせる数を返す
-  piece_box_can_be_reduced_count(piece, count) {
-    const max = this.piece_box_count(piece)
-    if (count > max) {
-      count = max
-    }
-    return count
-  }
-
-  piece_box_realize() {
-    const list = Object.entries(this.piece_box) // {a: 1} => [['a', 1]]
-    return _(list)
-      .filter(([key, count]) => count >= 1)
-      .map(([key, count]) => [Piece.fetch(key), count])
-      .sortBy(([key, count]) => key.code)
-      .value()
-  }
-
   // -------------------------------------------------------------------------------- Utilities
-
-  // location の駒台の駒をすべて駒箱に移動する
-  hold_pieces_to_piece_box(location) {
-    _.forIn(this.hold_pieces[location.key], (count, piece_key) => {
-      const piece = Piece.fetch(piece_key)
-      this.hold_pieces_add(location, piece, -count)
-      this.piece_box_add(piece, count)
-    })
-  }
-
-  // 駒箱の駒をすべて location の駒台に移動する
-  piece_box_to_hold_pieces(location) {
-    _.forIn(this.piece_box, (count, piece_key) => {
-      const piece = Piece.fetch(piece_key)
-      this.piece_box_add(piece, -count)
-      this.hold_pieces_add(location, piece, count)
-    })
-  }
-
-  // プリセットに対応するように駒箱をセットする
-  piece_box_reset_by_preset(preset_info) {
-    this.piece_box_clear()
-
-    const info = PresetInfo.fetch(preset_info)
-    info.piece_box.forEach(([e, c]) => {
-      this.piece_box_add(Piece.fetch(e), c)
-    })
-  }
-
-  // 駒箱に足りない駒だけにする
-  piece_box_piece_counts_adjust() {
-    this.piece_box_clear()
-
-    const counts_hash = this.hold_piece_all_counts_hash       // 両者の持駒の合計
-    const counts_hash_on_board = this.board.piece_counts_hash // 盤上の駒の合計
-
-    const info = PresetInfo.fetch("全部駒箱")
-    info.piece_box.forEach(([e, c]) => {
-      const piece = Piece.fetch(e)
-      const rest = c - ((counts_hash[piece.key] || 0) + (counts_hash_on_board[piece.key] || 0))
-      this.piece_box_add(piece, rest)
-    })
-  }
 
   // 両者の持駒を合わせたハッシュを返す
   get hold_piece_all_counts_hash() {
@@ -303,10 +228,6 @@ export class Xcontainer {
       })
     })
     return counts
-  }
-
-  piece_box_clear() {
-    this.piece_box = {}
   }
 
   //////////////////////////////////////////////////////////////////////////////// ランダム配置
@@ -334,8 +255,7 @@ export class Xcontainer {
   }
 
   // 指将棋用玉配置解除
-  // 玉は駒箱へ
-  // それ以外は相手の駒台へ
+  // 相手の駒台へ
   king_formation_auto_unset() {
     let success = false
     if (!success) {
@@ -363,8 +283,7 @@ export class Xcontainer {
   }
 
   // 指将棋用玉配置解除
-  // 玉は駒箱へ
-  // それ以外は相手の駒台へ
+  // 相手の駒台へ
   king_formation_unset(position) {
     const soldiers = this.king_formation_soldiers(position)
 
@@ -378,13 +297,8 @@ export class Xcontainer {
       if (soldier) {
         const piece = soldier.piece
         this.board.delete_at(soldier.place)
-        if (piece.key === "K") {
-          // 玉の場合は駒箱にとらげる
-          this.piece_box_add(piece)
-        } else {
-          // 他の駒は相手の駒箱へ
-          this.hold_pieces_add(Location.fetch("white"), piece)
-        }
+        // 他の駒は相手の駒箱へ
+        this.hold_pieces_add(Location.fetch("white"), piece)
       }
     })
 
@@ -411,7 +325,7 @@ export class Xcontainer {
     this.board.place_on(soldier)
   }
 
-  // 相手の駒→駒箱→自分の駒の順で駒を探してあれば -1 して true を返す
+  // 相手の駒を探してあれば -1 して true を返す
   piece_search_and_decrement(piece) {
     let found = false
 
@@ -419,22 +333,6 @@ export class Xcontainer {
     if (!found) {
       found = this.piece_search_on_hold_pieces_and_decrement("white", piece)
     }
-
-    // 駒箱から探す
-    if (!found) {
-      if (this.piece_box_count(piece) >= 1) {
-        this.piece_box_add(piece, -1)
-        found = true
-      }
-    }
-
-    if (false) {
-      // 自分の駒から探す
-      if (!found) {
-        found = this.piece_search_on_hold_pieces_and_decrement("black", piece)
-      }
-    }
-
     return found
   }
 

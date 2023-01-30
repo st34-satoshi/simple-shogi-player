@@ -144,36 +144,6 @@
           b-field(custom-class="is-small" label="上下レイアウト時の位置")
             b-slider(v-bind="slider_attrs" v-model="sp_piece_count_gap_bottom" :min="-100" :max="100" :step="0.1" :disabled="sp_layout === 'is_horizontal'")
 
-        .box
-          .title.is-5 駒箱
-          b-field(custom-class="is-small" label="")
-            MyColorPicker(v-model="sp_piece_box_color")
-          .columns.mt-4
-            .column.py-0
-              b-field(custom-class="is-small" label="セル(W)")
-                b-slider(v-bind="slider_attrs" v-model="sp_piece_box_piece_w" :min="1" :max="80" :step="1")
-            .column.py-0
-              b-field(custom-class="is-small" label="セル(H)")
-                b-slider(v-bind="slider_attrs" v-model="sp_piece_box_piece_h" :min="1" :max="80" :step="1")
-          b-field(custom-class="is-small" label="セル内の駒の大きさ(%)")
-            b-slider(v-bind="slider_attrs" v-model="sp_piece_box_piece_rate" :min="0" :max="100" :step="0.1")
-
-          //- .columns.mt-4
-          //-   .column.py-0
-          //-     b-field(custom-class="is-small" label="持駒画像(W)")
-          //-       b-slider(v-bind="slider_attrs" v-model="sp_stand_piece_w" :min="1" :max="80" :step="1")
-          //-   .column.py-0
-          //-     b-field(custom-class="is-small" label="持駒画像(H)")
-          //-       b-slider(v-bind="slider_attrs" v-model="sp_stand_piece_h" :min="1" :max="80" :step="1")
-
-        //- .box
-        //-   .title.is-5 モバイル
-        //-   b-field(custom-class="is-small" label="持駒等のサイズを縮小する" v-if="false")
-        //-     b-radio-button(size="is-small" v-model="sp_mobile_fit" native-value="is_mobile_fit_off") OFF
-        //-     b-radio-button(size="is-small" v-model="sp_mobile_fit" native-value="is_mobile_fit_on") ON
-        //-   b-field(custom-class="is-small" label="縦配置にする")
-        //-     b-radio-button(size="is-small" v-model="sp_mobile_vertical" native-value="is_mobile_vertical_off") OFF
-        //-     b-radio-button(size="is-small" v-model="sp_mobile_vertical" native-value="is_mobile_vertical_on") ON
 
         .box
           .title.is-5 成り不成り選択
@@ -493,11 +463,6 @@ export default {
       sp_grid_star_size: 10,
       sp_grid_star_z_index: 0,
 
-      sp_piece_box_color: "rgba(0, 0, 0, 0.2)",
-      sp_piece_box_piece_w: 38,
-      sp_piece_box_piece_h: 46,
-      sp_piece_box_piece_rate: 90,
-
       sp_comment: "is_comment_off",
       sp_common_gap: 12,
       sp_layer: DEVELOPMENT_P ? "is_layer_off" : "is_layer_off",
@@ -813,12 +778,6 @@ export default {
           --sp_stand_bg_color: ${this.hsla_format(this.sp_stand_bg_color)};
           --sp_stand_piece_w:            ${this.sp_stand_piece_w}px;
           --sp_stand_piece_h:            ${this.sp_stand_piece_h}px;
-
-          // 駒箱
-          --sp_piece_box_piece_w:        ${this.sp_piece_box_piece_w}px;
-          --sp_piece_box_piece_h:        ${this.sp_piece_box_piece_h}px;
-          --sp_piece_box_piece_rate:     ${this.sp_piece_box_piece_rate}%;
-          --sp_piece_box_color:          ${this.hsla_format(this.sp_piece_box_color)};
 
           // 成り不成り選択
           --sp_promote_select_modal_bg_color:    ${this.hsla_format(this.sp_promote_select_modal_bg_color)};

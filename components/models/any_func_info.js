@@ -5,11 +5,6 @@ export class AnyFuncInfo extends MemoryRecord {
   static get define() {
     return [
 
-      { key: "☖の持駒を駒箱へ",   func: e => { e.xcontainer.hold_pieces_to_piece_box(Location.fetch("white")) }, },
-      { key: "駒箱から☖の持駒へ", func: e => { e.xcontainer.piece_box_to_hold_pieces(Location.fetch("white")) }, },
-      { key: "駒箱を正規化",       func: e => { e.xcontainer.piece_box_piece_counts_adjust() }, },
-      { key: "駒箱に駒を一式生成", func: e => { e.xcontainer.piece_box_reset_by_preset("全部駒箱") }, },
-      { key: "駒箱の駒をクリア",   func: e => { e.xcontainer.piece_box_clear() }, },
       { key: "指将棋用玉配置",     func: e => { e.xcontainer.king_formation_auto_set()   }, },
       { key: "指将棋用玉回収",     func: e => { e.xcontainer.king_formation_auto_unset() }, },
       { key: "視点切り替え",       func: e => { e.TheSp.api_flip_toggle() }, },
