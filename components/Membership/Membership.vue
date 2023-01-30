@@ -45,11 +45,6 @@ export default {
       const list = []
       list.push(`is_position_${this.position}`) // 一番上で定義してあるので子には渡す必要なし
       list.push(`is_${this.location.key}`)
-      if (this.TheSp.xcontainer.current_location === this.location) {
-        list.push("is_turn_active")
-      } else {
-        list.push("is_turn_inactive")
-      }
       return list
     },
 
@@ -79,16 +74,6 @@ export default {
   &.is_layer_on
     .Membership
       +is_layer_border
-
-  // .Membership
-  //   border: 3px dashed blue ! important
-  //
-  // .MembershipLocation
-  //   // border: 1px dashed change_color($primary, $alpha: 0.5)
-  // .MembershipLocationPlayerInfo
-  //   // border: 1px dashed change_color($primary, $alpha: 0.5)
-  // .MembershipStand
-  //   border: 3px dashed red ! important
 
   +IS_HORIZONTAL
     .Membership

@@ -51,8 +51,6 @@ export default {
 <style lang="sass">
 @import "../support.sass"
 .ShogiPlayerGround
-  +defvar(sp_location_mark_inactive_rate, 0.5) // 手番ではないときの☗サイズの倍率
-
   .MembershipLocationMark
     display: flex
     justify-content: center
@@ -86,8 +84,4 @@ export default {
   .MembershipLocationMarkTexture
     width:  var(--sp_stand_piece_rate)
     height: var(--sp_stand_piece_rate)
-  .is_turn_inactive
-    .MembershipLocationMarkTexture
-      width:  calc(var(--sp_stand_piece_rate) * var(--sp_location_mark_inactive_rate))
-      height: calc(var(--sp_stand_piece_rate) * var(--sp_location_mark_inactive_rate))
 </style>
