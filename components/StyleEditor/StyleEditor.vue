@@ -277,10 +277,6 @@
             b-radio-button(size="is-small" v-model="sp_summary" native-value="is_summary_off") OFF
             b-radio-button(size="is-small" v-model="sp_summary" native-value="is_summary_on") ON
 
-          b-field(custom-class="is-small" label="KIFコメ表示")
-            b-radio-button(size="is-small" v-model="sp_comment" native-value="is_comment_off") OFF
-            b-radio-button(size="is-small" v-model="sp_comment" native-value="is_comment_on") ON
-
           b-field(custom-class="is-small" label="操作モードでは合法手に絞る(二歩・ワープ・王手放置等を除く)")
             b-radio-button(size="is-small" v-model="sp_play_mode_legal_move_only" :native-value="false") OFF
             b-radio-button(size="is-small" v-model="sp_play_mode_legal_move_only" :native-value="true") ON
@@ -463,7 +459,6 @@ export default {
       sp_grid_star_size: 10,
       sp_grid_star_z_index: 0,
 
-      sp_comment: "is_comment_off",
       sp_common_gap: 12,
       sp_layer: DEVELOPMENT_P ? "is_layer_off" : "is_layer_off",
       sp_pi_variant: "is_pi_variant_a",    // is_pi_variant_d
@@ -695,7 +690,6 @@ export default {
       params.sp_run_mode          = this.sp_run_mode
       params.sp_viewpoint         = this.sp_viewpoint
       params.sp_debug_mode             = this.sp_debug_mode,
-      params.sp_comment           = this.sp_comment,
       params.sp_turn              = this.sp_turn
       params.sp_body              = this.sp_body
       params.sp_setting           = "is_setting_off"

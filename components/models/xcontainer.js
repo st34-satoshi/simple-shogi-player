@@ -155,12 +155,6 @@ export class Xcontainer {
     return this.data_source.location_by_offset(this.turn_offset)
   }
 
-  get current_comments() {
-    if (this.data_source.comments_pack) {
-      return this.data_source.comments_pack[this.turn_offset]
-    }
-  }
-
   get turn_offset_min() {
     return this.data_source.turn_offset_min
   }

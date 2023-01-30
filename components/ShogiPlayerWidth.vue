@@ -5,13 +5,11 @@
   EditToolBlock() // TODO: remove
   .ShogiPlayerTransformBlock
     ShogiPlayerBody( ref="ShogiPlayerBody")
-  CommentBlock()
 </template>
 
 <script>
 import EditToolBlock from "./EditToolBlock.vue"
 import ShogiPlayerBody from "./ShogiPlayerBody.vue"
-import CommentBlock from "./CommentBlock.vue"
 import OpDisabledBlock from "./OpDisabledBlock.vue"
 import PromoteSelectModal from "./PromoteSelectModal.vue"
 
@@ -23,7 +21,6 @@ export default {
   components: {
     EditToolBlock,
     ShogiPlayerBody,
-    CommentBlock,
     OpDisabledBlock,
     PromoteSelectModal,
   },

@@ -37,7 +37,6 @@ export class KifParser extends ParserBase {
   reset() {
     super.reset()
     this.move_infos = []
-    this.comments_pack = {}
     this.board_lines = []                            // 盤面が1行ごと入る(内部用)
     this.direct_location = null                      // 手番の指定があればそのキー
     this.hold_pieces = this.hold_pieces_empty_hash() // 持駒個数
@@ -107,11 +106,6 @@ export class KifParser extends ParserBase {
               })
             }
           }
-        } else if (m["comment"]) {
-          // コメント部分
-          const i = this.move_infos.length
-          this.comments_pack[i] = this.comments_pack[i] || []
-          this.comments_pack[i].push(m["comment"])
         } else if (m["board"]) {
           // 盤
           this.board_lines.push(m["board"])
@@ -157,14 +151,6 @@ export class KifParser extends ParserBase {
 
   get move_infos() {
     return this._move_infos
-  }
-
-  set comments_pack(v) {
-    this._comments_pack = v
-  }
-
-  get comments_pack() {
-    return this._comments_pack
   }
 
   // private
@@ -230,6 +216,5 @@ if (process.argv[1] === __filename) {
   // console.log(instance.base_location)
   // console.log(instance.hold_pieces)
   console.log(instance.move_infos)
-  console.log(instance.comments_pack)
   console.log(instance.init_sfen === undefined)
 }
