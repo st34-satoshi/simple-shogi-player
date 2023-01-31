@@ -41,4 +41,8 @@ export default {
   .MembershipLocation
     width: 20%
     aspect-ratio: 2 / var(--sp_board_aspect_ratio); // width / height.
+.PlayerName
+  overflow: hidden
+  word-break: break-all
+  height: 100%
 </style>
