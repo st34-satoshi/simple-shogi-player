@@ -54,7 +54,7 @@ export default {
   //////////////////////////////////////////////////////////////////////////////// >= tablet
   +defvar(sp_stand_piece_w, 47px)              // 駒台のセル(W)
   +defvar(sp_stand_piece_h, 50px)              // 駒台のセル(H)
-  +defvar(sp_stand_piece_rate, 80%)            // 駒台のセル内の駒占有率
+  +defvar(sp_stand_piece_rate, 90%)            // 駒台のセル内の駒占有率
 
   // 共通
   .PieceTap

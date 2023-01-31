@@ -1,5 +1,5 @@
 <template lang="pug">
-.MembershipLocationMark(:class="component_class" :key="component_key" @click="click_handle")
+.MembershipLocationMark(:key="component_key")
   .MembershipLocationMarkTexture
 </template>
 
@@ -12,22 +12,8 @@ export default {
   props: {
     location: { required: true },
   },
-  methods: {
-    click_handle() {
-      if (this.flipable) {
-        this.TheSp.viewpoint_flip_handle()
-      }
-      if (this.TheSp.sp_location_click_handle) {
-        this.TheSp.sp_location_click_handle(this.location)
-      }
-    },
-  },
+  methods: {},
   computed: {
-    component_class() {
-      return {
-        "is-clickable": this.TheSp.sp_location_click_handle || this.flipable
-      }
-    },
     // inactiveになったとき影が残ってしまう問題があった。
     // inactiveになったときもactiveなときのコンポーネントを共有しているから。
     // なので状態をユニークしたキーを設定する
