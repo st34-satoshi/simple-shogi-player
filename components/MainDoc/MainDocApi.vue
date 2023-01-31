@@ -13,6 +13,7 @@
             sp_summary="is_summary_off"
             :sp_board_cell_pointerdown_user_handle="sp_board_cell_pointerdown_user_handle"
             :sp_board_cell_left_click_user_handle="sp_board_cell_left_click_user_handle"
+            :sp_player_info="sp_player_info"
             sp_debug_mode="is_debug_mode_off"
           )
       .columns
@@ -43,7 +44,10 @@ export default {
   data() {
     return {
       api_md,
-
+      sp_player_info: {
+        black: { name: "▲先手", },
+        white: { name: "△後手", },
+      },
     }
   },
 
