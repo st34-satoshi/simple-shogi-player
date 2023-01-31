@@ -86,6 +86,11 @@ export default {
       height: 100%
       &.is_position_north
         flex-direction: row              // 全体が縦並び → 持駒は横並び → 左寄せ 後手は「△ 後手 飛歩」のままでよい (左端→)
+        .MembershipLocation // north側ではプレイヤー名の表示を将棋版に近づける
+          position: relative
+          .PlayerName
+            position: absolute
+            bottom: 0px
       &.is_position_south
         flex-direction: row-reverse      // 全体が縦並び → 持駒は横並び → 右寄せ 先手は「飛歩 先手 ▲」とする (←右端)
 </style>
