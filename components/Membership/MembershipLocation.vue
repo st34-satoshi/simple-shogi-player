@@ -1,6 +1,7 @@
 <template lang="pug">
 .MembershipLocation
   MembershipLocationMark(:location="location")
+  .PlayerName(v-html="player_name" v-if="player_name")
 </template>
 
 <script>
@@ -16,6 +17,21 @@ export default {
   components: {
     MembershipLocationMark,
   },
+  methods: {
+    player_attr_of(key) {
+      if (this.one_side_info) {
+        return this.one_side_info[key]
+      }
+    },
+  },
+  computed: {
+    one_side_info() {
+      if (this.TheSp.sp_player_info) {
+        return this.TheSp.sp_player_info[this.location.key]
+      }
+    },
+    player_name()  { return this.player_attr_of("name")  },
+  }
 }
 </script>
 

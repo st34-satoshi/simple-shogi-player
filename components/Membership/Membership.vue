@@ -1,7 +1,6 @@
 <template lang="pug">
 .Membership(:class="component_class" v-if="component_show_p" @click.capture="click_handle")
   MembershipLocation(            :location="location")
-  MembershipLocationPlayerInfo(  :location="location")
   MembershipStand(               :location="location")
   slot
 </template>
@@ -12,7 +11,6 @@ import { support } from "../support.js"
 
 import MembershipLocation           from "./MembershipLocation.vue"
 import MembershipStand              from "./MembershipStand.vue"
-import MembershipLocationPlayerInfo from "./MembershipLocationPlayerInfo.vue"
 
 export default {
   mixins: [support],
@@ -24,7 +22,6 @@ export default {
 
   components: {
     MembershipLocation,
-    MembershipLocationPlayerInfo,
     MembershipStand,
   },
 
