@@ -116,24 +116,17 @@ export default {
   +defvar(sp_stand_bg_color, hsla(0, 0%, 0%, 0))           // 駒台の背景色
 
   .MembershipStand
-    // width: 100%
-    // height: 100%
+    width: 80%
+    height: 100%
 
   .MembershipStand2
     display: flex
-    justify-content: center // 駒台が広がったときに中央に寄るのを防ぎたいときは flex-start にする
+    justify-content: start // 駒台が広がったときに中央に寄せたいときは center にする
     align-items: center
+    width: 100%
 
-    // 最低限の大きさを確保するには？
-    //
-    //   min-width:  var(--sp_stand_piece_w)
-    //   min-height: var(--sp_stand_piece_h)
-    //
-    // もし駒台を最初から見せる場合は？
-    //
-    //   width: 100%
-    //   justify-content: flex-start
-    //
+  .PieceWithCount
+    width: calc(1/8 * 100%)
 
   .MembershipStand
     +is_overlay_origin

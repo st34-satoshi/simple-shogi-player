@@ -139,13 +139,6 @@ export default {
     // ちなみに flex であれば height: 100% で均等になる
     height: calc(100.0% / var(--sp_board_dimension_h))
 
-  // border が MainBoardTexture に負けるので入れ子にしている
-  // td
-  //   +is_overlay_origin
-  //   .CellBorder
-  //     +is_overlay_block
-  //     // border: calc(var(--sp_grid_stroke) * 1px) solid var(--sp_grid_color)
-
   .BoardRow:nth-child(3n+4)
     .BoardColumn:nth-child(3n+4)
       position: relative

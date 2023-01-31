@@ -181,9 +181,10 @@ export default {
 
   // 駒台
   .Membership
+    +defvar(sp_board_aspect_ratio, 1.097) // 盤の横を1.0としたときの縦の比率
     .PieceTap
-      width:  var(--sp_stand_piece_w)
-      height: var(--sp_stand_piece_h)
+      width:  100%
+      aspect-ratio: 1 / var(--sp_board_aspect_ratio); // width / height.
     .PieceTexture
       width:  var(--sp_stand_piece_rate)
       height: var(--sp_stand_piece_rate)
