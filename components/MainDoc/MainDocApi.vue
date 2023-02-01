@@ -15,6 +15,7 @@
             :sp_board_cell_left_click_user_handle="sp_board_cell_left_click_user_handle"
             :sp_player_info="sp_player_info"
             sp_debug_mode="is_debug_mode_off"
+            sp_bg_variant="is_bg_variant_b"
           )
       .columns
         .column
