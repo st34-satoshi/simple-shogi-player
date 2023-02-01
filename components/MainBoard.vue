@@ -18,7 +18,7 @@
       // 将棋盤の符号を表示する
       tr.BoardRankNumberRow
         td.BoardRankNumberColumn
-        td.BoardRankNumberText(v-for="(i, x) in TheSp.sp_board_dimension_h") {{10 - i}}
+        td.BoardRankNumberText(v-for="(i, x) in TheSp.sp_board_dimension_h") {{ rankNumber(10 - i) }}
         td.BoardRankNumberColumn
       tr.BoardRow(v-for="(j, y) in TheSp.sp_board_dimension_h")
         td.BoardRankNumberColumn
@@ -38,7 +38,7 @@
             )
         td.BoardRankColumn
           .BoardRankNumberColumn
-            .BoardRankNumberText {{ kanji(j) }}
+            .BoardRankNumberText {{ kanji(rankNumber(j)) }}
       tr.BoardRankNumberRow
         td.BoardRankNumberColumn
         td.BoardRankNumberText(v-for="(_, x) in TheSp.sp_board_dimension_h")
@@ -63,6 +63,12 @@ export default {
     this.TheSp.$data._MainBoardRenderCount += 1
   },
   methods: {
+    rankNumber(num){
+      if (this.TheSp.fliped) {
+        return 10 - num
+      }
+      return num
+    },
     kanji(num){
       return KanjiNumber.number_to_kanji(num)
     },
