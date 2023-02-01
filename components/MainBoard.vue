@@ -177,6 +177,7 @@ export default {
   .BoardRankNumberText
     height: 5px
     font-size: 10px // TODO: 将棋盤のサイズによって動的に変えたい。
+    font-weight: bold
 
   .BoardRow:nth-child(3n+4)
     .BoardColumn:nth-child(3n+4)
