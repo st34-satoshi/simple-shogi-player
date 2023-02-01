@@ -121,7 +121,7 @@ export default {
 
   .MembershipStand2
     display: flex
-    justify-content: start // 駒台が広がったときに中央に寄せたいときは center にする
+    justify-content: flex-start // 駒台が広がったときに中央に寄せたいときは center にする
     align-items: center
     width: 100%
 
