@@ -44,5 +44,5 @@ export default {
 .PlayerName
   overflow: hidden
   word-break: break-all
-  height: 100%
+  max-height: 100%
 </style>
