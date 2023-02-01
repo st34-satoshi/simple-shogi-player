@@ -15,7 +15,14 @@
     // ・そこでもし背景に画像を配置したとすると、その上の敷き詰めた黒は透明でなければならない
     // ・つまり、黒を敷き詰める必要あるのと、画像盤の上は透明でないといけないことが両立できない
     table.BoardField
-      tr.BoardRow(v-for="(_, y) in TheSp.sp_board_dimension_h")
+      // 将棋盤の符号を表示する
+      tr.BoardRankNumberRow
+        td.BoardRankNumberColumn
+        td.BoardRankNumberText(v-for="(i, x) in TheSp.sp_board_dimension_h") {{10 - i}}
+        td.BoardRankNumberColumn
+      tr.BoardRow(v-for="(j, y) in TheSp.sp_board_dimension_h")
+        td.BoardRankNumberColumn
+          //- .BoardRankNumberText 八
         td.BoardColumn(
           v-for="(_, x) in TheSp.sp_board_dimension_w"
           @pointerdown="TheSp.board_cell_pointerdown_handle(logical_xy(x, y), $event)"
@@ -29,11 +36,20 @@
             :style="TheSp.board_piece_back_style(logical_xy(x, y))"
             :piece_texture_class="TheSp.xcontainer.board_piece_fore_class(logical_xy(x, y))"
             )
+        td.BoardRankColumn
+          .BoardRankNumberColumn
+            .BoardRankNumberText {{ kanji(j) }}
+      tr.BoardRankNumberRow
+        td.BoardRankNumberColumn
+        td.BoardRankNumberText(v-for="(_, x) in TheSp.sp_board_dimension_h")
+        //-  .BoardRankNumberText 8
+        td.BoardRankNumberColumn
 </template>
 
 <script>
 import { support } from "./support.js"
 import { Board   } from "./models/board.js"
+import { KanjiNumber } from "./models/kanji_number.js"
 
 import PieceTap from "./PieceTap.vue"
 
@@ -47,12 +63,14 @@ export default {
     this.TheSp.$data._MainBoardRenderCount += 1
   },
   methods: {
+    kanji(num){
+      return KanjiNumber.number_to_kanji(num)
+    },
     click_handle() {
       if (this.TheSp.sp_board_click_handle) {
         this.TheSp.sp_board_click_handle()
       }
     },
-
     logical_xy(x, y) {
       x = x + Board.dimension - this.TheSp.sp_board_dimension_w
       y = y + Board.dimension - this.TheSp.sp_board_dimension_h
@@ -138,6 +156,20 @@ export default {
     // そのため明示的に指定するようにした。これによって対象外としていた Firefox でも見れるようになった
     // ちなみに flex であれば height: 100% で均等になる
     height: calc(100.0% / var(--sp_board_dimension_h))
+
+  // 将棋盤符号
+  .BoardRankNumberRow
+    height: 5px
+  .BoardRow
+    .BoardRankNumberColumn
+      display: flex
+      height: 100%
+      .BoardRankNumberText
+        align-self: center
+  .BoardRankNumberColumn
+    width: 5px
+  .BoardRankNumberText
+    height: 5px
 
   .BoardRow:nth-child(3n+4)
     .BoardColumn:nth-child(3n+4)
