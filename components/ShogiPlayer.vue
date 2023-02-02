@@ -15,11 +15,7 @@ import { KifParser  } from "./models/kif_parser.js"
 import { Location   } from "./models/location.js"
 
 // components
-import ErrorNotify        from "./ErrorNotify.vue"
-import OpDisabledBlock    from "./OpDisabledBlock.vue"
 import ShogiPlayerGround  from "./ShogiPlayerGround.vue"
-import EditToolBlock      from "./EditToolBlock.vue"
-import PromoteSelectModal from "./PromoteSelectModal.vue"
 
 // mixins modules
 import { app_focus          } from "./app_focus.js"
@@ -86,11 +82,7 @@ export default {
   },
 
   components: {
-    ErrorNotify,
-    OpDisabledBlock,
-    EditToolBlock,
     ShogiPlayerGround,
-    PromoteSelectModal,
   },
 
   data() {
