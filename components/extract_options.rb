@@ -44,7 +44,6 @@ Pathname("MainDoc/css_variable.md").write(s)
 # >> | `--sp_common_gap`                            | 12px                      | 共通の隙間                                                            |
 # >> | `--sp_turn_slider_block_margin_top`          | 0.75rem                   | 手数スライダーの上マージン                                            |
 # >> | `--sp_board_color`                           | rgba(0, 0, 0, 0.2)        | 盤の色                                                                |
-# >> | `--sp_board_image`                           | none                      | 盤画像                                                                |
 # >> | `--sp_board_opacity`                         |                       1.0 | 非半透明度                                                            |
 # >> | `--sp_board_padding`                         |                       1.5 | 盤の隅の隙間                                                          |
 # >> | `--sp_board_radius`                          |                         5 | 盤の隅の丸め度合い                                                    |

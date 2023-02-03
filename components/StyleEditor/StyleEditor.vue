@@ -66,8 +66,6 @@
               template(v-for="e in BgVariantInfo.values")
                 option(:value="e.key") {{e.name}}
 
-          ImageUpload(@input="sp_board_image_input_handle")
-
         .box
           .title.is-5 盤
           b-field(custom-class="is-small" label="角丸め")
@@ -396,7 +394,6 @@ export default {
       se_frame_width: 80,
       se_ws_image: null,
       se_bg_pattern: true,
-      sp_board_image: null,
       sp_controller_width:        0.5,
       sp_controller_width_mobile: 0.8,
 
@@ -566,10 +563,6 @@ export default {
     se_ws_image_input_handle(v) {
       this.se_ws_image = v
     },
-    sp_board_image_input_handle(v) {
-      this.sp_board_image = v
-      this.sp_bg_variant = "is_bg_variant_none" // 背景画像プリセットを選択してない状態に戻しておく
-    },
     force_paper_style() {
       this.sp_pi_variant        = "is_pi_variant_b"      // 紙面風駒
       this.sp_board_padding     = 0                      // 隙間なし
@@ -662,13 +655,6 @@ export default {
       }
     },
 
-    sp_board_image_url() {
-      if (!this.sp_board_image) {
-        return "none"
-      }
-      return `url(${this.sp_board_image})`
-    },
-
     se_ws_bg_url() {
       if (!this.se_ws_image) {
         return "none"
@@ -741,7 +727,6 @@ export default {
 
           // 盤テクスチャ
           --sp_board_color:              ${this.hsla_format(this.sp_board_color)};
-          --sp_board_image:              ${this.sp_board_image_url};
 
           // 盤
           --sp_board_padding:            ${this.sp_board_padding};
