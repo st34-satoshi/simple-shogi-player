@@ -9,20 +9,8 @@ import { Place      } from "./place.js"
 import { Soldier    } from "./soldier.js"
 import { Location   } from "./location.js"
 import { MoveHash   } from "./move_hash.js"
-import { Xcontainer   } from "./xcontainer.js"
 
 export class SfenParser extends ParserBase {
-  static sfen_flop(sfen) {
-    const source = this.parse(sfen)
-
-    // 方法2. SFENパーサーで読み取ってそのままSFEN出力する間で属性を変更する方法
-    if (true) {
-      source.attributes["board"] = source.board.flop.to_sfen
-      source.attributes["moves"] = source.move_infos.map(e => e.to_flop_sfen).join(" ")
-      return source.to_sfen
-    }
-  }
-
   reset() {
     super.reset()
     this.attributes = {}
