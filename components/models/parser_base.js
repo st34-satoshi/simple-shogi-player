@@ -63,6 +63,3 @@ export class ParserBase {
     console.warn("not implemented")
   }
 }
-
-if (process.argv[1] === __filename) {
-}

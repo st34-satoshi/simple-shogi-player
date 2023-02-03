@@ -241,24 +241,6 @@ export class Board {
   }
 
   shuffle_apply(size) {
-    // const new_board = new Board()
-    // _.forEach(this._surface, (soldier, place) => {
-    //   while (true) {
-    //     const nx = _.random(0, size - 1)
-    //     const ny = _.random(0, size - 1)
-    //     const new_place = Place.fetch([nx, ny])
-    //     if (new_board.lookup(new_place)) {
-    //       const new_soldier = new Soldier(Object.assign({}, soldier.attributes, {
-    //         location: soldier.location,
-    //         place: new_place,
-    //       }))
-    //       new_board.place_on(new_soldier)
-    //       break
-    //     }
-    //   }
-    // })
-    // return new_board
-
     if ((size * size) < this.soldiers.length) {
       // alert(`再配置するスペースより駒の数の方が多いため処理できません`)
       return
@@ -266,11 +248,6 @@ export class Board {
 
     const places = this.all_places(size)
     const shuffled_places = _.shuffle(places)
-    // console.log(places)
-    // if (places.length < this.soldiers.length) {
-    //   alert("空がありません")
-    //   return
-    // }
 
     const new_board = new Board()
     let i = 0
