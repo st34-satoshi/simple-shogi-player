@@ -25,10 +25,6 @@ export class ParserBase {
     console.warn("not implemented")
   }
 
-  // get hold_pieces() {
-  //   return this.hold_pieces_empty_hash()
-  // }
-
   // {"black" => {}, "white" => {}} を得る
   hold_pieces_empty_hash() {
     return _.reduce(Location.values, (a, e) => {

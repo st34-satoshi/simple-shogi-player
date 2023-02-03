@@ -15,28 +15,6 @@ export class SfenParser extends ParserBase {
   static sfen_flop(sfen) {
     const source = this.parse(sfen)
 
-    // 方法1. Xcontainer を仲介する方法
-    // 一応動くけど Xcontainer まで出動する必要はない
-    // もっと下位層のライブラリで行うべき
-    if (false) {
-      const xcontainer = new Xcontainer()
-      xcontainer.data_source = source
-      xcontainer.current_turn = 0
-      xcontainer.run()
-      xcontainer.board = xcontainer.board.flop
-
-      const parts = []
-      parts.push(xcontainer.to_short_sfen)
-
-      const v = source.move_infos
-      if (v.length >= 1) {
-        parts.push("moves")
-        parts.push(v.map(e => e.to_flop_sfen).join(" "))
-      }
-
-      return parts.join(" ")
-    }
-
     // 方法2. SFENパーサーで読み取ってそのままSFEN出力する間で属性を変更する方法
     if (true) {
       source.attributes["board"] = source.board.flop.to_sfen
@@ -110,24 +88,6 @@ export class SfenParser extends ParserBase {
     return Number(this.attributes["turn_counter_next"]) - 1
   }
 
-  // "b - 1" なら 0
-  // "w - 2" なら 1
-  // "b - 3" なら 2
-  // get turn_offset_min() {
-  //   // return Number(this.attributes["turn_counter_next"]) - 1
-  //   // return Number(this.attributes["turn_counter_next"]) - 1
-  // }
-
-  // // "b - 1" -> turn_offset_min:0 % 2 -> 0 && w
-  // // "w - 2" -> turn_offset_min:1 % 2 -> 1 && w
-  // // "b - 3" -> turn_offset_min:2 % 2 -> 0 && w
-  // // "w - 1" -> turn_offset_min:0 % 2 -> 0 && w -> true
-  // // "b - 2" -> turn_offset_min:1 % 2 -> 1 && w
-  // // "w - 3" -> turn_offset_min:2 % 2 -> 0 && w -> true
-  // get komaochi_p() {
-  //   return (this.turn_offset_min % 2) === 0 && this.base_location.key === "white"
-  // }
-
   // FIXME: move_hashes が正しい
   get move_infos() {
     // this.moves.map((e, i) => { としたかったが break できないため lodash の forEach に変更。lodash のは false で break できる
@@ -137,10 +97,6 @@ export class SfenParser extends ParserBase {
       if (!move_hash) {
         return false  // break
       }
-      // if (true) {
-      //   move_hash["scene_index"] = this.turn_offset_min + i
-      //   move_hash["scene_offset"] = i
-      // }
       move_hash["location"] = this.location_by_offset(i) // これいるのか？ → いる
       ary.push(move_hash)
     })
@@ -233,17 +189,4 @@ if (process.argv[1] === __filename) {
 
   sfen_parser = SfenParser.parse("position sfen +lnsgkgsnl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LNSGKGSNL b S2s 1 moves 7i6h S*2d")
   console.log(sfen_parser)
-
-  // sfen_parser = new SfenParser("position sfen +lnsgkgsnl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LNSGKGSNL b S2s 1 moves 7i6h S*2d")
-  // sfen_parser.parse()
-  // console.log(sfen_parser.board)
-  // console.log(sfen_parser.base_location.key)
-  // console.log(sfen_parser.hold_pieces)
-  // console.log(sfen_parser.move_infos)
-  // console.log(sfen_parser.moves)
-  // console.log(sfen_parser.init_sfen)
-  //
-  // sfen_parser = new SfenParser("position sfen lr4knl/3g2gs1/4ppP2/p4bNpp/2pSsN3/PPPP1P2P/2N1P1G2/2G6/L1K4RL w BPs3p 72 moves 2b3c")
-  // sfen_parser.parse()
-  // console.log(sfen_parser.location_by_offset(0))
 }
