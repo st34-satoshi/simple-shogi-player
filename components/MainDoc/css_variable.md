@@ -17,11 +17,9 @@
 | `--sp_body_width`                            | 100%                      | 盤(駒台を含む)の幅         FIXME: とる                                |
 | `--sp_body_max_width`                        | none                      | 盤(駒台を含む)の最大幅     FIXME: とる                                |
 | `--sp_ground_color`                          | transparent               | グラウンド背景色                                                      |
-| `--sp_ground_image`                          | none                      | グラウンド背景画像                                                    |
 | `--sp_common_gap`                            | 12px                      | 共通の隙間                                                            |
 | `--sp_turn_slider_block_margin_top`          | 0.75rem                   | 手数スライダーの上マージン                                            |
 | `--sp_board_color`                           | rgba(0, 0, 0, 0.2)        | 盤の色                                                                |
-| `--sp_board_image`                           | none                      | 盤画像                                                                |
 | `--sp_board_opacity`                         |                       1.0 | 非半透明度                                                            |
 | `--sp_board_padding`                         |                       1.5 | 盤の隅の隙間                                                          |
 | `--sp_board_radius`                          |                         5 | 盤の隅の丸め度合い                                                    |

@@ -40,7 +40,6 @@ Pathname("MainDoc/css_variable.md").write(s)
 # >> | `--sp_stand_piece_rate`                      | 80%                       | 駒台のセル内の駒占有率                                                |
 # >> | `--sp_body_width`                            | 100%                      | 盤(駒台を含む)の幅         FIXME: とる                                |
 # >> | `--sp_ground_color`                          | transparent               | グラウンド背景色                                                      |
-# >> | `--sp_ground_image`                          | none                      | グラウンド背景画像                                                    |
 # >> | `--sp_common_gap`                            | 12px                      | 共通の隙間                                                            |
 # >> | `--sp_turn_slider_block_margin_top`          | 0.75rem                   | 手数スライダーの上マージン                                            |
 # >> | `--sp_board_color`                           | rgba(0, 0, 0, 0.2)        | 盤の色                                                                |

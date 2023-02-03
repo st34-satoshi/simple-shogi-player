@@ -105,7 +105,6 @@ export default {
 .ShogiPlayerGround
   // 全体背景と同じ構成
   +defvar(sp_board_color, rgba(0, 0, 0, 0.2))      // 盤の色
-  +defvar(sp_board_image, none)                    // 盤画像
 
   +defvar(sp_board_opacity, 1.0)                   // 非半透明度
   +defvar(sp_board_padding, 1.5)                   // 盤の隅の隙間
@@ -130,7 +129,6 @@ export default {
   .MainBoardTexture
     background-color: var(--sp_board_color)  // 背景色は画像の透明な部分があれば見えるので画像があっても無駄にはならない
     +is_background_cover_by_image
-    background-image: var(--sp_board_image)  // none でスルーする
     // background-image: url("../assets/inspect/256x256.png")
 
     border-radius: calc(var(--sp_board_radius) * 1px)

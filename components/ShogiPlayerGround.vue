@@ -59,14 +59,12 @@ export default {
 
   // 盤背景と同じ構成
   +defvar(sp_ground_color, transparent)      // グラウンド背景色
-  +defvar(sp_ground_image, none)             // グラウンド背景画像
 
   +is_overlay_origin
   .ShogiPlayerGroundTexture
     +is_overlay_block
 
     background-color: var(--sp_ground_color)
-    background-image: var(--sp_ground_image)
     background-position: center
     background-repeat: no-repeat
     background-size: cover
