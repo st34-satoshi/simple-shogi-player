@@ -16,3 +16,15 @@
         @content;
     }
 }
+
+@mixin my_widescreen(){
+    @media only screen and (min-width:1216px) and (max-width:1407px){
+        @content;
+    }
+}
+
+@mixin my_fullhd(){
+    @media only screen and (min-width:1408px){
+        @content;
+    }
+}

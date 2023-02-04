@@ -814,6 +814,7 @@ export default {
 
 <style lang="sass">
 @import "pattern.css/pattern.scss"
+@import "../styleSheets/display_size.scss"
 
 $sidebar_width_desktop: 30%
 $sidebar_width_tablet:  40%
@@ -821,11 +822,11 @@ $sidebar_width_mobile:  100% * 3 / 4
 
 .StyleEditor-Sidebar
   .sidebar-content
-    +mobile
+    +my_mobile
       width: $sidebar_width_mobile
-    +tablet
+    +my_tablet
       width: $sidebar_width_tablet
-    +desktop
+    +my_desktop
       width: $sidebar_width_desktop
 
   .box
@@ -860,9 +861,9 @@ $sidebar_width_mobile:  100% * 3 / 4
 
   &.sidebar_p
     .Workspace
-      +tablet
+      +my_tablet
         width: unquote("calc(100% - #{$sidebar_width_tablet})")
-      +desktop
+      +my_desktop
         width: unquote("calc(100% - #{$sidebar_width_desktop})")
 
   .StyleEditor-Background

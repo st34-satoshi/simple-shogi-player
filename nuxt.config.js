@@ -87,15 +87,6 @@ export default {
     "./assets/sass/application.sass",
     // "@/assets/custom-styles.scss"
   ],
-  styleResources: {
-    sass: [
-      "./assets/sass/styleResources.scss", // sass の項目に scss のファイルを与えないと読み込まれないのは謎
-    ],
-    // scss: [
-    //   // "~assets/vars/*.scss",
-    //   // "~assets/abstracts/_mixins.scss"
-    // ]
-  },
 
   /*
   ** Plugins to load before mounting the App

@@ -14,16 +14,16 @@ export default {
 </script>
 
 <style lang="sass">
-@import "./support.sass"
+@import "../styleSheets/display_size.scss"
 .MainDocApp
-  +mobile
+  +my_mobile
     font-size: 15px
 
   .content
     word-break: break-all
 
   .section
-    +mobile
+    +my_mobile
       margin: 2em 0em 1rem
       padding: 0
 

@@ -26,12 +26,9 @@ export default {
 </script>
 
 <style lang="sass">
+@import "../styleSheets/display_size.scss"
 .navbar.MainDocMainNavbar
-  +touch
-    // touch以下で is-spaced の左右の padding が外れ navbar-item が画面端にくっついてしまうため少し隙間を入れる
-    padding-left: 24px
-    padding-right: 24px
-  +mobile
+  +my_mobile
     // さらにモバイル時はさらに上下の隙間がもったいないので is-spaced の上下を無効にする
     padding-top: 0
     padding-bottom: 0
@@ -39,20 +36,4 @@ export default {
     // 微調整ではなく0にしたい
     padding-left: 12px
     padding-right: 12px
-
-.STAGE-development
-  .navbar.MainDocMainNavbar
-    border: 1px dashed $primary
-    .navbar-item
-      border: 1px dashed $danger
-    +touch
-      background: $purple
-    +mobile
-      background: $green
-    +desktop
-      background: $blue
-    +widescreen
-      background: $danger
-    +fullhd
-      background: $turquoise
 </style>

@@ -293,11 +293,11 @@ export default {
 @import "./support.sass"
 
 html
-  +mobile
+  +my_mobile
     --main_doc_option_sidebar_width: 60%
-  +tablet
+  +my_tablet
     --main_doc_option_sidebar_width: 50%
-  +desktop
+  +my_desktop
     --main_doc_option_sidebar_width: 40%
 
 .MainDocOption-Sidebar
@@ -320,7 +320,7 @@ html
       word-break: break-all
 
   .SpWrap
-    +desktop
+    +my_desktop
       width: unquote("min(100%, 512px)")
   &.sidebar_p
     .SpWrap
