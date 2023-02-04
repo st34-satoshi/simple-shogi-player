@@ -31,4 +31,6 @@ export default {
     --sp_grid_outer_stroke: 2
     --sp_board_padding: 0
     --sp_board_color: transparent
+    .BoardField
+      border: none
 </style>
