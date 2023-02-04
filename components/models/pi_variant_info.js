@@ -4,7 +4,7 @@ export class PiVariantInfo extends MemoryRecord {
   static get define() {
     return [
       { key: "is_pi_variant_none", name: "none",                        },
-      { key: "is_pi_variant_a",    name: "ぬれよん(svg)",               },
+      // { key: "is_pi_variant_a",    name: "ぬれよん(svg)",               },
       { key: "is_pi_variant_b",    name: "紙面風(svg)",                 },
       { key: "is_pi_variant_c",    name: "図案駒(png)",                 },
       { key: "is_pi_variant_d",    name: "Portella(png)",               },
