@@ -135,7 +135,6 @@ export default {
         materialDesignIconsHRef: "https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css",
       }
     ],
-    // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
     "@nuxtjs/proxy",
 

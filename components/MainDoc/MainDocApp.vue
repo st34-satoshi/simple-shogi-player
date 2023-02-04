@@ -3,7 +3,6 @@
   MainDocHero
   MainDocSummary
   MainDocDemo
-  //- MainDocUsage
   //- MainDocApi
   //- MainDocCredit
 </template>
