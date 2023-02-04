@@ -7,7 +7,7 @@
     :sp_turn="4"
     :sp_player_info="sp_player_info"
     sp_bg_variant="is_bg_variant_a"
-    sp_pi_variant="is_pi_variant_d"
+    sp_pi_variant="is_pi_variant_b"
   )
 </template>
 

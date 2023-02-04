@@ -9,7 +9,7 @@
     :sp_turn="4"
     :sp_player_info="sp_player_info"
     sp_bg_variant="is_bg_variant_a"
-    sp_pi_variant="is_pi_variant_d"
+    sp_pi_variant="is_pi_variant_b"
     sp_layout="is_horizontal"
     sp_controller="is_controller_on"
     sp_slider="is_slider_on"
