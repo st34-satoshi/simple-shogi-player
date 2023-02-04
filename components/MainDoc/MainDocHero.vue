@@ -44,8 +44,6 @@ export default {
 @import "./support.sass"
 .MainDocHero
   .hero-foot
-    li
-      background-color: change_color($black, $alpha: 0.1)
     li:not(:first-child)
       margin-left: 0.25rem
 </style>
