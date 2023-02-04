@@ -61,7 +61,7 @@ export default {
     sp_layout:                             { type: String, default: "is_vertical",           }, // レイアウト is_(vertical|horizontal)
     sp_balloon:                            { type: String, default: "is_balloon_on",         }, // 対局者名の下に駒数スタイルと同じ背景色を置く
     sp_layer:                              { type: String, default: "is_layer_off",          }, // レイヤー確認(デバッグ用)
-    sp_pi_variant:                         { type: String, default: "is_pi_variant_a",       }, // 駒の種類
+    sp_pi_variant:                         { type: String, default: "is_pi_variant_b",       }, // 駒の種類
     sp_bg_variant:                         { type: String, default: "is_bg_variant_none",    }, // 盤の種類
     sp_mobile_fit:                         { type: String, default: "is_mobile_fit_on",      }, // DEPRECATE
     sp_mobile_vertical:                    { type: String, default: "is_mobile_vertical_on", }, // モバイル時に自動的に縦配置に切り替える
