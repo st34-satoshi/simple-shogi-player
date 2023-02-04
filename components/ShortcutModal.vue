@@ -91,7 +91,7 @@ export default {
 .ShogiPlayer
   &.ShortcutModal
     .simple_title
-      border-bottom: 1px solid $grey-lighter
+      border-bottom: 1px solid $my-grey-lighter
     .table
       th, td
         vertical-align: middle
@@ -99,7 +99,7 @@ export default {
         font-weight: normal
         text-align: right
         border-width: 0
-        font-size: $size-7
+        font-size: $my-size-7
       td
         text-align: left
         border-width: 0

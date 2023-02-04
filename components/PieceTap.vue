@@ -67,7 +67,7 @@ export default {
     .PieceTap
       +is_layer_border
     .PieceTexture
-      +is_layer_border($danger)
+      +is_layer_border($my-danger)
 
   .PieceTap
     +is_overlay_origin

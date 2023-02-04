@@ -106,7 +106,7 @@ export default {
 .ImageUpload
   .file
     .button
-      font-size: $size-7
+      font-size: $my-size-7
       overflow: hidden
 
   .preview
