@@ -16,20 +16,9 @@
       MainDocViewDemo1.is-10-tablet.is-8-desktop.is-6-widescreen
     .columns.mt-6
       MainDocViewDemo2
-      MainDocViewDemo3
-    .columns.mt-6
-      MainDocViewDemo4
       MainDocViewDemo5
-    .columns.mt-6
-      MainDocViewDemo6
     .columns.mt-6.is-centered
       MainDocViewDemo8.is-11-tablet.is-10-desktop.is-9-widescreen
-
-    b-message.mt-6(type="is-info")
-      | レスポンシブでたくさん表示。画面幅に応じて横に並ぶ個数が変わる
-    .columns.is-multiline
-      template(v-for="i in 15")
-        MainDocViewDemo7
 
     .columns.mt-6
       MainDocViewDesc
@@ -41,8 +30,6 @@
       MainDocPlayDemo2
     .columns
       MainDocPlayDemo3
-      MainDocPlayDemo4
-      MainDocPlayDemo5
     MainDocPlayDemo6
     .columns.is-centered
       MainDocPlayDesc

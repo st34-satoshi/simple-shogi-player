@@ -6,11 +6,11 @@
     .column
       .has-text-centered
         | マウスが使えるときの挙動
-      ShogiPlayer(v-bind="{...default_params, sp_device: 'is_device_desktop'}")
+      ShogiPlayer(v-bind="{...default_params, sp_device: 'is_device_desktop', sp_pi_variant: 'is_pi_variant_b'}")
     .column
       .has-text-centered
         | スマホやタブレットでの挙動
-      ShogiPlayer(v-bind="{...default_params, sp_device: 'is_device_touch'}")
+      ShogiPlayer(v-bind="{...default_params, sp_device: 'is_device_touch', sp_pi_variant: 'is_pi_variant_b'}")
 </template>
 
 <script>

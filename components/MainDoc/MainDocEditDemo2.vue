@@ -6,6 +6,7 @@
     sp_preset_key="詰将棋"
     sp_slider="is_slider_on"
     sp_bg_variant="is_bg_variant_a"
+    sp_pi_variant="is_pi_variant_b"
     sp_debug_mode="is_debug_mode_off"
     sp_run_mode="edit_mode"
     )

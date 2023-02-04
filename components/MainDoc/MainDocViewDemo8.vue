@@ -2,12 +2,10 @@
 .MainDocViewDemo8.column
   b-message(type="is-info")
     | BOD形式を含むKIFの読み込み
-  //- .has-text-centered
-  //-   .title.is-4 {{kifu_book_info.name}}
   .columns
     .column
       ShogiPlayer(
-        sp_pi_variant="is_pi_variant_a"
+        sp_pi_variant="is_pi_variant_b"
         sp_controller="is_controller_on"
         sp_slider="is_slider_on"
         :sp_turn="0"

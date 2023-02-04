@@ -11,6 +11,7 @@
     sp_debug_mode="is_debug_mode_off"
     sp_run_mode="play_mode"
     sp_human_side="black"
+    sp_pi_variant="is_pi_variant_b"
     )
 </template>
 
