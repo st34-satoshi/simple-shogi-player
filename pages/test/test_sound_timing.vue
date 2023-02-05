@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     user_event_check(key) {
-      this.$buefy.toast.open({message: key, queue: false})
+      console.log({message: key, queue: false})
 
       // https://zenn.dev/terrierscript/articles/2022-07-15-audio-context-sound-effect
       const audioCtx = new window.AudioContext()

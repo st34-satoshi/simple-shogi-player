@@ -54,11 +54,11 @@ export default {
 
   methods: {
     sp_board_cell_left_click_user_handle(place, event) {
-      this.$buefy.toast.open({message: `${place.kanji_human}のセルをクリック`, queue: false})
+      console.log({message: `${place.kanji_human}のセルをクリック`, queue: false})
       return true
     },
     sp_board_cell_pointerdown_user_handle(place, event) {
-      this.$buefy.toast.open({message: `${place.kanji_human}のセルをクリック(押した瞬間)`, queue: false})
+      console.log({message: `${place.kanji_human}のセルをクリック(押した瞬間)`, queue: false})
       return true
     },
 

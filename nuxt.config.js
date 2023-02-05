@@ -81,7 +81,6 @@ export default {
   */
   css: [
     // "application.sass"
-    // "~/assets/css/buefy.scss",
     // "~/assets/sass/application.sass",
     // "../app/javascript/stylesheets/application.sass",
     "./assets/sass/application.sass",
@@ -116,8 +115,6 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://buefy.github.io/#/documentation
-    // ~/src/shogi-extend/front_app/node_modules/nuxt-buefy/lib/module.js
     [
       "nuxt-buefy",
       {

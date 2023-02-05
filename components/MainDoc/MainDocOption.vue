@@ -135,10 +135,7 @@
     .container
       form(action="/")
         .SpWrap
-          //- @player_info_click="(location, sp_player_info) => $buefy.toast.open(location.name)"
           ShogiPlayer(
-            :sp_player_click_handle="(location, sp_player_info) => $buefy.toast.open(location.name)"
-            :sp_location_click_handle="(location) => $buefy.toast.open(location.name)"
             :sp_run_mode.sync="sp_run_mode"
             :sp_body.sync="sp_body"
             :sp_turn.sync="sp_turn"
@@ -170,7 +167,6 @@
             :sp_play_mode_foul_break_p="sp_play_mode_foul_break_p"
             )
             //- @update:play_mode_advanced_last_move="       e => trigger_check('play_mode_advanced_last_move', e)"
-            //- @click.native="() => $buefy.toast.open({message: '全体のどこかをクリック', queue: false})"
 
   .section
     .container
@@ -274,7 +270,7 @@ export default {
     trigger_check(key, v) {
       this.$data[key] = v
       if (this.trigger_toast_p) {
-        this.$buefy.toast.open({message: `${key} -> ${JSON.stringify(v)}`, queue: false})
+        console.log({message: `${key} -> ${JSON.stringify(v)}`, queue: false})
       }
     },
   },
