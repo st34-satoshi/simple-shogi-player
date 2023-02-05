@@ -16,7 +16,7 @@ export const any_func_module = {
     shuffle_dialog_open() {
       this.shuffle_mode_p = false // 数字が入力できないため OFF にする
 
-      this.$buefy.dialog.prompt({
+      console.error({
         message: "寸法の一辺のサイズを指定してください",
         confirmText: "実行",
         cancelText: "キャンセル",
