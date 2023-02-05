@@ -125,10 +125,7 @@
   MainDocMainNavbar
     template(slot="brand")
       MainDocNavbarItemHome
-      b-navbar-item(tag="div").has-text-weight-bold 引数とイベントチェック
-    template(slot="end")
-      b-navbar-item.has-text-weight-bold(@click="sidebar_toggle")
-        | 動作テスト
+      .navbar-item(tag="div").has-text-weight-bold 引数とイベントチェック
 
   //- この form は prevent が効いているか確認するためのもの
   .section

@@ -1,5 +1,5 @@
 <template lang="pug">
-b-navbar-item(tag="nuxt-link" :to="to")
+a.navbar-item(tag="nuxt-link" href="/")
   b-icon(:icon="icon")
 </template>
 
@@ -7,7 +7,6 @@ b-navbar-item(tag="nuxt-link" :to="to")
 export default {
   name: "MainDocNavbarItemHome",
   props: {
-    to:   { default: () => ({name: "index"}), },
     icon: { default: "home",                  },
   },
 }

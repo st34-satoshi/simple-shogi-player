@@ -3,7 +3,7 @@
   MainDocMainNavbar
     template(slot="brand")
       MainDocNavbarItemHome
-      b-navbar-item(tag="div").has-text-weight-bold sp_device 動作テスト
+      .navbar-item(tag="div").has-text-weight-bold sp_device 動作テスト
   .section
     .container
       .columns

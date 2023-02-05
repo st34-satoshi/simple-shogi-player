@@ -3,7 +3,7 @@
   MainDocMainNavbar
     template(slot="brand")
       MainDocNavbarItemHome
-      b-navbar-item(tag="div").has-text-weight-bold 反則判定
+      .navbar-item(tag="div").has-text-weight-bold 反則判定
   .section
     .container
       .columns

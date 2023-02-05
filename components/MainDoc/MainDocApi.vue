@@ -3,7 +3,7 @@
   MainDocMainNavbar
     template(slot="brand")
       MainDocNavbarItemHome
-      b-navbar-item(tag="div").has-text-weight-bold API
+      .navbar-item(tag="div").has-text-weight-bold API
   .section
     .container
       .columns

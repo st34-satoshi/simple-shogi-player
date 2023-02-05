@@ -3,7 +3,7 @@
   MainDocMainNavbar
     template(slot="brand")
       MainDocNavbarItemHome
-      b-navbar-item(tag="div").has-text-weight-bold クレジット (利用素材)
+      .navbar-item(tag="div").has-text-weight-bold クレジット (利用素材)
 
   .section
     .container

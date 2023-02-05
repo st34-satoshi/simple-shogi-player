@@ -338,19 +338,6 @@
             | {{human_css}}
 
   b-button.sidebar_toggle_button(@click="sidebar_toggle_handle" icon-left="menu" size="is-medium" type="is-text")
-
-    //- b-navbar(type="is-primary" :mobile-burger="false" wrapper-class="container" spaced)
-    //-   template(slot="brand")
-    //-     b-navbar-item.has-text-weight-bold 将棋盤エディター
-    //-   template(slot="end")
-    //-     b-navbar-item(@click="sidebar_toggle_handle")
-    //-       b-icon(icon="menu")
-
-    //- .section
-    //-   .container.is-fluid
-    //-     .buttons
-    //-     .columns.is-multiline
-
   .Workspace.is-overlay
     .WorkspaceBackground.is-overlay
     .ShogiPlayerWrap

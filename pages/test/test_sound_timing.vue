@@ -3,7 +3,7 @@
   MainDocMainNavbar
     template(slot="brand")
       MainDocNavbarItemHome
-      b-navbar-item(tag="div").has-text-weight-bold 音タイミング
+      .navbar-item(tag="div").has-text-weight-bold 音タイミング
   .section
     .container
       .columns

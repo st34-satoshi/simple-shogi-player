@@ -3,7 +3,7 @@
   .hero-head
     b-navbar(:mobile-burger="false" wrapper-class="container")
       template(slot="end")
-        b-navbar-item(href="https://github.com/akicho8/shogi-player")
+        a.navbar-item(href="https://github.com/akicho8/shogi-player")
           b-icon(icon="github")
           .ml-2 GitHub
 
