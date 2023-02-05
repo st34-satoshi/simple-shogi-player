@@ -2,13 +2,11 @@
 .ShogiPlayerWidth
   PromoteSelectModal( v-if="TheSp.dialog_soldier")
   OpDisabledBlock()
-  EditToolBlock() // TODO: remove
   .ShogiPlayerTransformBlock
     ShogiPlayerBody( ref="ShogiPlayerBody")
 </template>
 
 <script>
-import EditToolBlock from "./EditToolBlock.vue"
 import ShogiPlayerBody from "./ShogiPlayerBody.vue"
 import OpDisabledBlock from "./OpDisabledBlock.vue"
 import PromoteSelectModal from "./PromoteSelectModal.vue"
@@ -19,7 +17,6 @@ export default {
   name: "ShogiPlayerWidth",
   mixins: [support],
   components: {
-    EditToolBlock,
     ShogiPlayerBody,
     OpDisabledBlock,
     PromoteSelectModal,
