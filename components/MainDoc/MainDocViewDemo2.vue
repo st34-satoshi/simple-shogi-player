@@ -1,6 +1,6 @@
 <template lang="pug">
 .MainDocViewDemo2.column
-  b-message(type="is-info")
+  article(type="is-info")
     | シンプル。最終手から表示。※盤面クリックで操作可。天王山クリックで反転
   .has-text-centered
     .title.is-4 {{kifu_book_info.name}}

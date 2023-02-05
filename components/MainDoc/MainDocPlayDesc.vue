@@ -1,6 +1,6 @@
 <template lang="pug">
 .MainDocPlayDesc.column
-  b-message.has-text-left(type="is-success" title="操作モードについて" :closable="false")
+  article.has-text-left(type="is-success" title="操作モードについて" :closable="false")
     .content
       ul
         li スライダー等で変更した任意局面から手番側の操作が行える

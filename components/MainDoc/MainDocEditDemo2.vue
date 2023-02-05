@@ -1,6 +1,6 @@
 <template lang="pug">
 .MainDocEditDemo2.column
-  b-message(type="is-info")
+  article(type="is-info")
     | 詰将棋用の初期配置で開始
   ShogiPlayer(
     sp_preset_key="詰将棋"

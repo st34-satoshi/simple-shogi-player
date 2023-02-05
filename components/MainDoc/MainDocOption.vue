@@ -167,7 +167,7 @@
         .column
           section
 
-            b-message.shogi_player_params(:closable="false" type="is-primary" title="引数")
+            article.shogi_player_params(:closable="false" type="is-primary" title="引数")
               pre.is-size-6
                 | ShogiPlayer(
                 |   sp_run_mode="{{sp_run_mode}}"

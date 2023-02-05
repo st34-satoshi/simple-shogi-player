@@ -1,6 +1,6 @@
 <template lang="pug">
 .MainDocPlayDemo1.column
-  b-message(type="is-info")
+  article(type="is-info")
     | 人間が操作できる。戻れば操作をやり直せる。デフォルトでは(二歩や千日手を除く)合法手のみの制限がある
   ShogiPlayer(
     :sp_body="kifu_book_info.sp_body"

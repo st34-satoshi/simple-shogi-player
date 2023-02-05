@@ -1,6 +1,6 @@
 <template lang="pug">
 .MainDocPlayDemo6
-  b-message(type="is-info")
+  article(type="is-info")
     | 画面幅ではなく実際にマウスの存在を判別し、マウスがあればhoverなどでセルが反応し、駒を持ち上げる動作になる
   .columns
     .column

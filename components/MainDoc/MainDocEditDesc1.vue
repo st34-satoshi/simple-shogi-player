@@ -1,6 +1,6 @@
 <template lang="pug">
 .MainDocEditDesc1.column
-  b-message(:closable="false" type="is-success" title="編集モードの操作方法")
+  article(:closable="false" type="is-success" title="編集モードの操作方法")
     .content
       ul
         li ダブルクリック or 右クリック or 修飾キーを押しながら左クリックで、盤上の駒の反転と向きを変更する(ショートカットキー: v, r, Space)

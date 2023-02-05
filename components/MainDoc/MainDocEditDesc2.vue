@@ -1,6 +1,6 @@
 <template lang="pug">
 .MainDocEditDesc2.column
-  b-message(:closable="false" type="is-success" title="view_mode からのモード切り替えと復帰について")
+  article(:closable="false" type="is-success" title="view_mode からのモード切り替えと復帰について")
     .content
       ul
         //- li 右の<b-icon icon="dots-vertical" size="is-small"></b-icon>をクリックするとモードを切り替えることができる
