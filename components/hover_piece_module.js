@@ -97,8 +97,13 @@ export const hover_piece_module = {
         this.mouse_stick_p = false
 
         this.$el.removeEventListener("mousemove", this.mousemove_hook)
+        this.$el.removeEventListener("mousemove", this.click_test) // FIXME: これがないとなぜが駒がホバーしない？？
         this.$el.removeEventListener("click", this.click_hook)
       }
+    },
+
+    click_test(e){
+      console.log('click event', e)
     },
 
     mousemove_hook(e) {
