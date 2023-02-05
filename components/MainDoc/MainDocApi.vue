@@ -1,9 +1,5 @@
 <template lang="pug">
 .MainDocApi
-  MainDocMainNavbar
-    template(slot="brand")
-      MainDocNavbarItemHome
-      .navbar-item(tag="div").has-text-weight-bold API
   .section
     .container
       .columns

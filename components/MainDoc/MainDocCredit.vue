@@ -1,10 +1,5 @@
 <template lang="pug">
 .MainDocCredit
-  MainDocMainNavbar
-    template(slot="brand")
-      MainDocNavbarItemHome
-      .navbar-item(tag="div").has-text-weight-bold クレジット (利用素材)
-
   .section
     .container
       .content

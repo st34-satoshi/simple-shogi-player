@@ -1,8 +1,5 @@
 <template lang="pug">
 .hero.is-primary.is-medium.MainDocHero
-  .hero-head
-    b-navbar(:mobile-burger="false" wrapper-class="container")
-
   .hero-body
     .container.has-text-centered
       h1.title

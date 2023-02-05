@@ -122,11 +122,6 @@
           b-field(custom-class="is-small" label="@foul_accident: 反則があって無効化したとき")
             b-input(size="is-small" :value="JSON.stringify(foul_accident)" readonly type="textarea")
 
-  MainDocMainNavbar
-    template(slot="brand")
-      MainDocNavbarItemHome
-      .navbar-item(tag="div").has-text-weight-bold 引数とイベントチェック
-
   //- この form は prevent が効いているか確認するためのもの
   .section
     .container

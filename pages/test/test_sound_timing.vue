@@ -1,9 +1,5 @@
 <template lang="pug">
 .test-test_sound_timing
-  MainDocMainNavbar
-    template(slot="brand")
-      MainDocNavbarItemHome
-      .navbar-item(tag="div").has-text-weight-bold 音タイミング
   .section
     .container
       .columns
