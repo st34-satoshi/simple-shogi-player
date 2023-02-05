@@ -8,7 +8,7 @@
   b-sidebar.StyleEditor-Sidebar(fullheight right v-model="sidebar_p" position="fixed")
     .mx-4.my-4
       .is-flex.is-justify-content-start.is-align-items-center
-        b-button(@click="sidebar_toggle_handle" icon-left="menu")
+        button(@click="sidebar_toggle_handle" icon-left="menu")
         .mx-3.has-text-weight-bold スタイルエディタ
 
       .my_controls
@@ -182,7 +182,7 @@
                 b-slider(v-bind="tf0_slider_attrs" v-model="se_tf0_scale" :min="0" :max="2.0" :step="0.001")
               b-field(custom-class="is-small")
                 .control
-                  b-button(size="is-small" @click="se_tf0_reset") リセット
+                  button(size="is-small" @click="se_tf0_reset") リセット
 
             b-tab-item(label="盤")
               b-field(custom-class="is-small" label="" message="有効にすると背景とのブレンドは効かなくなる")
@@ -206,7 +206,7 @@
                 b-slider(v-bind="tf1_slider_attrs" v-model="se_tf1_scale" :min="0" :max="2.0" :step="0.001")
               b-field(custom-class="is-small")
                 .control
-                  b-button(size="is-small" @click="se_tf1_reset") リセット
+                  button(size="is-small" @click="se_tf1_reset") リセット
             b-tab-item(label="駒")
               b-field(custom-class="is-small" label="" message="有効にすると盤とのブレンドは効かなくなる")
                 b-radio-button(size="is-small" v-model="se_tf2_mode" native-value="is_tf2_mode_off") OFF
@@ -229,7 +229,7 @@
                 b-slider(v-bind="tf2_slider_attrs" v-model="se_tf2_scale" :min="0" :max="2.0" :step="0.001")
               b-field(custom-class="is-small")
                 .control
-                  b-button(size="is-small" @click="se_tf2_reset") リセット
+                  button(size="is-small" @click="se_tf2_reset") リセット
 
         .box
           .title.is-5 コントローラー＆スライダー
@@ -261,7 +261,7 @@
           b-field(custom-class="is-small" label="プリセット")
             .control
               .buttons
-                b-button(@click="force_paper_style" size="is-small") 紙面風
+                button(@click="force_paper_style" size="is-small") 紙面風
 
           b-field(custom-class="is-small" label="テキストの視認性を上げる(駒数の背景を適用)")
             b-radio-button(size="is-small" v-model="sp_balloon" native-value="is_balloon_off") OFF
@@ -337,7 +337,7 @@
           pre
             | {{human_css}}
 
-  b-button.sidebar_toggle_button(@click="sidebar_toggle_handle" icon-left="menu" size="is-medium" type="is-text")
+  button.sidebar_toggle_button(@click="sidebar_toggle_handle" icon-left="menu" size="is-medium" type="is-text")
   .Workspace.is-overlay
     .WorkspaceBackground.is-overlay
     .ShogiPlayerWrap

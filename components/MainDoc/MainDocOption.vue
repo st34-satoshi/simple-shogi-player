@@ -3,7 +3,7 @@
   b-sidebar.MainDocOption-Sidebar(fullheight right v-model="sidebar_p" position="fixed" open)
     .mx-4.my-4
       .is-flex.is-justify-content-start.is-align-items-center
-        b-button(@click="sidebar_toggle" icon-left="close")
+        button(@click="sidebar_toggle" icon-left="close")
         //- .mx-3.has-text-weight-bold オプション
 
       .my_controls
@@ -20,7 +20,7 @@
             //- b-slider(v-model="sp_turn" :min="-1" :max="256" step="1")
             b-input(size="is-small" v-model.number="sp_turn" type="number")
           b-field(custom-class="is-small" label="棋譜変更")
-            b-button(size="is-small" @click="sp_body = KifuBookInfo.fetch('foul_check').sp_body") 反則確認用
+            button(size="is-small" @click="sp_body = KifuBookInfo.fetch('foul_check').sp_body") 反則確認用
 
         .box
           .title.is-5 対局者情報

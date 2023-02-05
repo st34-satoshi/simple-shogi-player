@@ -15,9 +15,9 @@
       | {{e.name}}
     b-dropdown-item(separator)
     b-dropdown-item キャンセル
-  b-button(@click.stop.prevent="TheSp.fn_flip_all" icon-left="pan-vertical" size="is-small")
-  b-button(@click.stop.prevent="TheSp.fn_flop"   icon-left="pan-horizontal" size="is-small")
-  b-button(@click.stop.prevent="TheSp.init_location_toggle" size="is-small")
+  //- b-button(@click.stop.prevent="TheSp.fn_flip_all" icon-left="pan-vertical" size="is-small")
+  //- b-button(@click.stop.prevent="TheSp.fn_flop"   icon-left="pan-horizontal" size="is-small")
+  //- b-button(@click.stop.prevent="TheSp.init_location_toggle" size="is-small")
     .is-size-7 {{TheSp.init_location.name}}
 </template>
 
