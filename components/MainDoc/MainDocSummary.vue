@@ -36,7 +36,6 @@
           li <b>駒落ち棋譜再生</b>: 対応
           li <b>入力フォーマット:</b> KIF, BOD, SFEN
           li <b>出力フォーマット:</b> SFEN
-          li <b>フレームワーク:</b> Buefy
 </template>
 
 <script>
