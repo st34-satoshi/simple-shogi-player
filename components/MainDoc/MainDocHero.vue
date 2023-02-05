@@ -15,7 +15,6 @@
           li: nuxt-link(:to="{name: 'options'}") 引数とイベントチェック
           li: nuxt-link(:to="{name: 'api'}") API
           li: nuxt-link(:to="{name: 'css-customize'}") CSS変数一覧
-          li: nuxt-link(:to="{name: 'editor'}") スタイルエディタ
           li: nuxt-link(:to="{name: 'credit'}") クレジット
           template(v-if="development_p")
             li: nuxt-link(:to="{name: 'test-sp_device'}") sp_device テスト
