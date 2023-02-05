@@ -115,14 +115,6 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // [
-    //   "nuxt-buefy",
-    //   {
-    //     css: false,
-    //     // materialDesignIconsHRef: "//cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css",
-    //     materialDesignIconsHRef: "https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css",
-    //   }
-    // ],
     "@nuxtjs/axios",
     "@nuxtjs/proxy",
 
