@@ -1,8 +1,6 @@
 // 持ち上げた駒
 // ・PC のときだけ見える
 
-const HOVER_PIECE_ELEMENT_POSITION_UPDATE_60FPS = true
-
 import { PositionInfo } from "./models/position_info.js"
 
 export const hover_piece_module = {
@@ -25,11 +23,9 @@ export const hover_piece_module = {
     // 持ち上げた駒の位置を更新する
     hover_piece_element_position_update() {
       if (this.$data._HoverPieceElement && this.$data._me_last_event && this.mouse_stick_p) {
-        // if (this.devise_info.key === "is_device_desktop") {
         const x = this.$data._me_last_event.clientX
         const y = this.$data._me_last_event.clientY
         this.element_vector_set(this.$data._HoverPieceElement, {x, y})
-        // }
       }
     },
 
@@ -107,24 +103,7 @@ export const hover_piece_module = {
 
     mousemove_hook(e) {
       this.$data._me_last_event = e
-
-      // 連続で呼ばれるイベント処理を緩和する方法
-      // https://qiita.com/noplan1989/items/9333faad731f5ecaaccd
-      // ※試してみているけどあまり効果がない
-      if (HOVER_PIECE_ELEMENT_POSITION_UPDATE_60FPS) {
-        // 呼び出されるまで何もしない
-        if (!this.pos_update_need_p) {
-          this.pos_update_need_p = true // 呼んでいい
-
-          // 描画する前のタイミングで呼び出してもらう
-          window.requestAnimationFrame(() => {
-            this.hover_piece_element_position_update()
-            this.pos_update_need_p = false // もう呼ぶな
-          })
-        }
-      } else {
-        this.hover_piece_element_position_update()
-      }
+      this.hover_piece_element_position_update()
     },
 
     // 右クリックならキャンセル(動いてないっぽい)
