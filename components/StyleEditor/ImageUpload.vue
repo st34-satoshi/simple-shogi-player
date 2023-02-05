@@ -3,7 +3,6 @@
   b-field.file.my-4(custom-class="is-small")
     b-upload(v-model="file_info" @input="input_handle" expanded)
       a.button.is-fullwidth.is-size-7
-        b-icon(icon="upload")
         span(v-if="file_info")
           | {{file_info.name}}
         span(v-else)

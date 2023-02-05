@@ -56,7 +56,7 @@
           b-tag(type="is-primary") 修飾キー
           span.mx-1 +
           b-tag(type="is-primary")
-            b-icon(icon="arrow-all" size="is-small")
+            //- b-icon(icon="arrow-all" size="is-small")
       tr
         th ｷｰﾎﾞｰﾄﾞｼｮｰﾄｶｯﾄ
         td

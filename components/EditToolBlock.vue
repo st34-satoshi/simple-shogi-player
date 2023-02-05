@@ -3,14 +3,14 @@
   b-dropdown(v-model="TheSp.new_preset_key")
     //  button.button にすると prevent を指定する場所がないため button で外側の form が反応してしまう
     .button.is-small(slot="trigger")
-      b-icon(icon="apps" size="is-small")
+      //- b-icon(icon="apps" size="is-small")
     b-dropdown-item(v-for="record in TheSp.preset_info_values" :value="record.key" :key="record.key" @click="TheSp.xcontainer_setup_by_preset(record)")
       | {{record.name}}
     b-dropdown-item(separator)
     b-dropdown-item キャンセル
   b-dropdown.mx-0(v-model="TheSp.any_func_key" size="is-small")
     .button.is-small(slot="trigger")
-      b-icon(icon="menu" size="is-small")
+      //- b-icon(icon="menu" size="is-small")
     b-dropdown-item(v-for="e in TheSp.AnyFuncInfo.values" :value="e.key" :key="e.key" @click="TheSp.any_func_click_handle(e)")
       | {{e.name}}
     b-dropdown-item(separator)
