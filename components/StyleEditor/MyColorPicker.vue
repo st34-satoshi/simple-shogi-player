@@ -21,7 +21,6 @@ b-colorpicker.MyColorPicker(
 
 <script>
 import chroma from "chroma-js"
-import BuefyColor from "@/node_modules/buefy/src/utils/color"
 
 export default {
   name: "MyColorPicker",
@@ -61,7 +60,9 @@ export default {
 
     // BuefyColor オブジェクトを返す
     buefy_color_new(v) {
-      return BuefyColor.parse(chroma(v).css("rgba")) // Buefy内蔵のBuefyColor クラスは rgba しかパースできない
+      // :FIXME, :TODO 色を変更可能にする
+      // return BuefyColor.parse(chroma(v).css("rgba")) // Buefy内蔵のBuefyColor クラスは rgba しかパースできない
+      return null;
     },
 
     // chroma でパースできたときだけ chroma オブジェクトを返す
