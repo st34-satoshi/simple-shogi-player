@@ -17,7 +17,6 @@
   "dependencies": {
     "@babel/preset-env": "^7.12.17",
     "autolinker": "latest",
-    "bulma": "^0.9.4",
     "chroma-js": "^2.1.0",
     "dayjs": "^1.11.5",
     "file-loader": "^6.2.0",
