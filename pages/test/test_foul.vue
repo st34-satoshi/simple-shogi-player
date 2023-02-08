@@ -1,9 +1,5 @@
 <template lang="pug">
 .test-test_foul
-  MainDocMainNavbar
-    template(slot="brand")
-      MainDocNavbarItemHome
-      b-navbar-item(tag="div").has-text-weight-bold 反則判定
   .section
     .container
       .columns

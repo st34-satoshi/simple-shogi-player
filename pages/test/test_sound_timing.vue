@@ -1,9 +1,5 @@
 <template lang="pug">
 .test-test_sound_timing
-  MainDocMainNavbar
-    template(slot="brand")
-      MainDocNavbarItemHome
-      b-navbar-item(tag="div").has-text-weight-bold 音タイミング
   .section
     .container
       .columns
@@ -32,7 +28,7 @@ export default {
   },
   methods: {
     user_event_check(key) {
-      this.$buefy.toast.open({message: key, queue: false})
+      console.log({message: key, queue: false})
 
       // https://zenn.dev/terrierscript/articles/2022-07-15-audio-context-sound-effect
       const audioCtx = new window.AudioContext()

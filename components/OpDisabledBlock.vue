@@ -1,5 +1,5 @@
 <template lang="pug">
-.OpDisabledBlock.is-overlay(v-if="TheSp.sp_op_disabled")
+.OpDisabledBlock.MyOverlay(v-if="TheSp.sp_op_disabled")
 </template>
 
 <script>
@@ -20,5 +20,5 @@ export default {
         z-index: $overlay_for_disable_z
     .is_layer_on
       .OpDisabledBlock
-        background: change_color($primary, $alpha: 0.5)
+        background: change_color($my-primary, $alpha: 0.5)
 </style>

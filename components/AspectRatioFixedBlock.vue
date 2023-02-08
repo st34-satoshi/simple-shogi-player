@@ -42,5 +42,4 @@ export default {
       +is_overlay_origin
       .AspectRatioFixedBlockContainer
         +is_overlay_block
-        // border: 1px dashed change_color($danger, $alpha: 0.5)
 </style>

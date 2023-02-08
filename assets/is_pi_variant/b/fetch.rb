@@ -17,7 +17,7 @@ require "open-uri"
   "BS1" => "https://glyphwiki.org/wiki/u5168",
   "BN1" => "https://glyphwiki.org/wiki/u572d",
   "BL1" => "https://glyphwiki.org/wiki/u674f",
-  "BP1" => "https://studio.beatnix.co.jp/files/moji-svg/hiragana/minchyo/01/hira_min_to.svg",
+  "BP1" => "https://glyphwiki.org/wiki/u3068",
 }.each do |key, url|
   if url.include?("glyphwiki")
     code = url.split("/").last

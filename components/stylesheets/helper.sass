@@ -43,11 +43,11 @@ $promote_select_modal_z:    30 // b-navbar より上にする
   &.is_vertical
     @content
   &.is_mobile_vertical_on
-    +mobile
+    +my_mobile
       @content
 
 // is_layer_on のとき用
-=is_layer_border($color: $primary)
+=is_layer_border($color: $my-primary)
   border: 1px dashed change_color($color, $alpha: 0.5)
 
 // 駒数の背景色とテキスト色を適用
@@ -93,19 +93,11 @@ $promote_select_modal_z:    30 // b-navbar より上にする
     html
       --#{$key}: #{$val}
 
-// pug:
-//
-//   .Foo
-//     .FooTexture
-//
-// sass:
-//
-//   .Foo
-//     +is_overlay_origin  // ← 親に relative が必要なので忘れるな。bulma の is-relative でもいい。
-//     .FooTexture
-//       +is_overlay_block
-//
 =is_overlay_origin
   position: relative
 =is_overlay_block
-  @extend %overlay
+  bottom: 0
+  left: 0
+  position: absolute
+  right: 0
+  top: 0

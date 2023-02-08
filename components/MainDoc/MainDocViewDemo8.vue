@@ -1,6 +1,6 @@
 <template lang="pug">
 .MainDocViewDemo8.column
-  b-message(type="is-info")
+  article(type="is-info")
     | BOD形式を含むKIFの読み込み
   .columns
     .column

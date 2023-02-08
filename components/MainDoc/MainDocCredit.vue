@@ -1,10 +1,5 @@
 <template lang="pug">
 .MainDocCredit
-  MainDocMainNavbar
-    template(slot="brand")
-      MainDocNavbarItemHome
-      b-navbar-item(tag="div").has-text-weight-bold クレジット (利用素材)
-
   .section
     .container
       .content
@@ -19,7 +14,7 @@
           //- li
           //-   MainDocExternalLink(href="https://www.google.co.jp/search?q=Portella+lishogi") Portella
           //-   MainDocExternalLink.mx-2(href="https://creativecommons.org/licenses/by-nc-sa/4.0/") (CC BY-NC-SA 4.0)
-          li: MainDocExternalLink(href="https://twitter.com/Shogi_Zuan") 将棋図案駒 (404)
+          //- li: MainDocExternalLink(href="https://twitter.com/Shogi_Zuan") 将棋図案駒 (404)
           li: MainDocExternalLink(href="https://glyphwiki.org/") グリフウィキ
           //- MainDocExternalLink(href="https://www.photolibrary.jp/") 写真素材 - フォトライブラリー photolibrary
 </template>

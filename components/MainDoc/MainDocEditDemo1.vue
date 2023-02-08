@@ -1,6 +1,6 @@
 <template lang="pug">
 .MainDocEditDemo1.column
-  b-message(type="is-info")
+  article(type="is-info")
     | すべての駒を自由に動かせる
   ShogiPlayer(
     :sp_body="kifu_book_info.sp_body"

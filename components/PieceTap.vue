@@ -1,7 +1,7 @@
 <template lang="pug">
 .PieceTap(v-if="count >= 1")
   // 駒を押せる部分
-  .PieceTapBG.is-overlay
+  .PieceTapBG.MyOverlay
   .PieceTexture
     // PieceTexture の背景に画像を設定すると影が PieceCount にまで適用されるため個別にしている
     .PieceTextureSelf(:class="piece_texture_class")
@@ -67,7 +67,7 @@ export default {
     .PieceTap
       +is_layer_border
     .PieceTexture
-      +is_layer_border($danger)
+      +is_layer_border($my-danger)
 
   .PieceTap
     +is_overlay_origin

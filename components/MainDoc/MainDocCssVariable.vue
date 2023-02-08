@@ -1,9 +1,5 @@
 <template lang="pug">
 .MainDocCssVariable
-  MainDocMainNavbar
-    template(slot="brand")
-      MainDocNavbarItemHome
-      b-navbar-item(tag="div").has-text-weight-bold CSS変数一覧
   .section
     .container
       MainDocMd(:body="css_variable")

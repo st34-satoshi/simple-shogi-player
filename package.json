@@ -1,7 +1,7 @@
 {
   "name": "shogi-player",
   "version": "0.0.360",
-  "description": "shogi kifu viewer player and editor (depends on vue.js, buefy)",
+  "description": "shogi kifu viewer player and editor (depends on vue.js)",
   "keywords": "shogi kif sfen viewer editor player japanese-chess",
   "homepage": "https://akicho8.github.io/shogi-player/",
   "author": "Akira Ikeda <pinpon.ikeda@gmail.com>",
@@ -17,8 +17,6 @@
   "dependencies": {
     "@babel/preset-env": "^7.12.17",
     "autolinker": "latest",
-    "buefy": "^0.9.22",
-    "bulma": "^0.9.4",
     "chroma-js": "^2.1.0",
     "dayjs": "^1.11.5",
     "file-loader": "^6.2.0",
@@ -45,7 +43,6 @@
     "jest": "^26.6.0",
     "marked": "^1.2.5",
     "nuxt": "^2.15.8",
-    "nuxt-buefy": "^0.4.23",
     "pattern.css": "^1.0.0",
     "rimraf": "^3.0.2",
     "vue": "~2.6",

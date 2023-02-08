@@ -1,9 +1,5 @@
 <template lang="pug">
 .MainDocApi
-  MainDocMainNavbar
-    template(slot="brand")
-      MainDocNavbarItemHome
-      b-navbar-item(tag="div").has-text-weight-bold API
   .section
     .container
       .columns
@@ -20,14 +16,14 @@
       .columns
         .column
           .buttons.is-centered
-            b-button(label="盤面をクリア" @click="run_api_board_clear")
-            b-button(label="初期配置" @click="run_api_board_turn_set")
-            b-button(label="7五角配置" @click="run_put_75_kaku")
-            b-button(label="後手3四竜配置" @click="run_put_34_ryu")
-            b-button(label="先手持ち駒金追加" @click="run_api_hold_pieces_add_black_kin")
-            b-button(label="先手持ち駒金削除" @click="run_api_hold_pieces_remove_black_kin")
-            b-button(label="4九金削除" @click="run_delete_on_49")
-            b-button(label="反転" @click="run_api_flip_toggle")
+            button( @click="run_api_board_clear") 盤面をクリア
+            button(@click="run_api_board_turn_set") "初期配置"
+            button(@click="run_put_75_kaku") "7五角配置"
+            button(@click="run_put_34_ryu") "後手3四竜配置"
+            button(@click="run_api_hold_pieces_add_black_kin") "先手持ち駒金追加"
+            button(@click="run_api_hold_pieces_remove_black_kin") "先手持ち駒金削除"
+            button(@click="run_delete_on_49") "4九金削除"
+            button(@click="run_api_flip_toggle") "反転"
       .columns
         .column
           MainDocMd(:body="api_md")
@@ -54,11 +50,11 @@ export default {
 
   methods: {
     sp_board_cell_left_click_user_handle(place, event) {
-      this.$buefy.toast.open({message: `${place.kanji_human}のセルをクリック`, queue: false})
+      console.log({message: `${place.kanji_human}のセルをクリック`, queue: false})
       return true
     },
     sp_board_cell_pointerdown_user_handle(place, event) {
-      this.$buefy.toast.open({message: `${place.kanji_human}のセルをクリック(押した瞬間)`, queue: false})
+      console.log({message: `${place.kanji_human}のセルをクリック(押した瞬間)`, queue: false})
       return true
     },
 

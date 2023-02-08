@@ -283,14 +283,6 @@ export const edit_mode_module = {
             this.mouse_stick_p = false // ダイアログ選択時時は動かしている駒を止める
             this.dialog_soldier = new_soldier
             this.hover_piece_element_destroy()
-
-            // this.$buefy.dialog.confirm({
-            //   message: '成りますか？',
-            //   confirmText: '成る',
-            //   cancelText: '成らない',
-            //   onConfirm: () => { this.promotable_piece_moved(new_soldier, true)  },
-            //   onCancel:  () => { this.promotable_piece_moved(new_soldier, false) },
-            // })
           }
         } else {
           if (this.play_p) {

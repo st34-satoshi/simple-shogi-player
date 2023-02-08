@@ -79,7 +79,7 @@ export default {
   justify-content: center
 
   //////////////////////////////////////////////////////////////////////////////// for mobile
-  +mobile
+  +my_mobile
     &.is_mobile_fit_on
       justify-content: center
       align-items: center

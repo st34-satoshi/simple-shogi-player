@@ -1,6 +1,6 @@
 <template lang="pug">
 .MainDocPlayDemo2.column
-  b-message(type="is-info")
+  article(type="is-info")
     | sp_human_side オプションで▲側だけを人間が操作できるようにする。これは主にCPU対人間のときに使う
   ShogiPlayer(
     :sp_body="kifu_book_info.sp_body"

@@ -1,6 +1,6 @@
 <template lang="pug">
 .MainDocViewDemo0.column
-  b-message(type="is-info")
+  article(type="is-info")
     | 将棋盤表示
   ShogiPlayer(
     :sp_body="kifu_book_info.sp_body"

@@ -1,6 +1,6 @@
 <template lang="pug">
 .MainDocViewDesc.column
-  b-message(:closable="false" type="is-success" title="共通する操作方法")
+  article(:closable="false" type="is-success" title="共通する操作方法")
     .content
       ul
         li sp_overlay_nav オプションが "is_overlay_nav_on" のときは、盤面の左右クリックで前後の手番に進み、天王山(5五の地点)をクリックすると反転する

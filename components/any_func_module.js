@@ -16,7 +16,7 @@ export const any_func_module = {
     shuffle_dialog_open() {
       this.shuffle_mode_p = false // 数字が入力できないため OFF にする
 
-      this.$buefy.dialog.prompt({
+      console.error({
         message: "寸法の一辺のサイズを指定してください",
         confirmText: "実行",
         cancelText: "キャンセル",
@@ -29,7 +29,7 @@ export const any_func_module = {
     shuffle_run(size) {
       size = parseInt(size)
       if (!this.xcontainer.shuffle_apply(size)) {
-        this.$buefy.toast.open({message: `${size} x ${size} が盤上の駒の数より少ないため何もしませんでした`, position: "is-bottom", queue: false, duration: 1000 * 2.0, type: "is-warning"})
+        console.log({message: `${size} x ${size} が盤上の駒の数より少ないため何もしませんでした`, position: "is-bottom", queue: false, duration: 1000 * 2.0, type: "is-warning"})
       }
     },
   },
