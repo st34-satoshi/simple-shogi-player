@@ -6,10 +6,10 @@
   // それを防ぐためには .MainBoard の :after に背景を指定すればよい
   // が、わかりやすくするために背景専用の MainBoardBG を追加した
   // これなら MainBoardTexture に適用した影が table に影響しない
-  .MainBoardTexture.is-overlay
+  .MainBoardTexture.MyOverlay
 
   // MainBoardTexture の兄弟として BoardField を置くと MainBoardTexture に BoardField の border が負ける
-  .BoardFieldWithPadding.is-overlay
+  .BoardFieldWithPadding.MyOverlay
     // flex ではなく table にしている理由
     // ・罫線が実線ではなく隙間であるため、線を黒くしようとしたとき、背景に黒を敷き詰めておかないといけない
     // ・そこでもし背景に画像を配置したとすると、その上の敷き詰めた黒は透明でなければならない

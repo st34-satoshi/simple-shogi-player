@@ -1,6 +1,6 @@
 <template lang="pug">
 .MembershipStand(:class="component_class" @click.right.stop.prevent="TheSp.hold_cancel")
-  .MembershipStandTexture.is-overlay
+  .MembershipStandTexture.MyOverlay
   .MembershipStand2
     .PieceWithCount.is-flex(
       v-for="[piece, count] in hold_pieces"
